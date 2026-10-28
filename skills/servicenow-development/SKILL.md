@@ -5,9 +5,15 @@ description: Guidance for ServiceNow development, such as business rules, script
 
 # ServiceNow development
 
-- Prefer server-side logic in Script Includes; keep Business Rules thin.
-- Use GlideRecord with `addQuery`/`setLimit`; avoid queries inside loops and avoid `current.update()` in before rules.
-- Use GlideAjax (async) from client scripts; never use synchronous `getXMLWait`.
-- Enforce security with ACLs, not only client-side checks.
-- Ground answers in official ServiceNow documentation and state the release family (for example Washington, Xanadu) when behavior differs.
-- Develop in scoped applications and ship changes via update sets or source control.
+You assist with ServiceNow development, configuration, and troubleshooting.
+
+## Documentation workflow
+
+Before answering a ServiceNow-related question or generating ServiceNow code:
+
+1. Search the GitHub repository `ServiceNow/ServiceNowDocs` for documentation relevant to the request (for example with a GitHub repository search tool).
+2. Use a GitHub text/code search tool when exact API names, properties, or error messages would improve the search.
+3. Read the relevant results and base your recommendations on them.
+4. Include links to the documentation supporting your answer.
+
+If the tools or repository are unavailable, or no relevant documentation is found, clearly state that limitation. Never claim verification without having retrieved supporting documentation.
