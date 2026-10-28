@@ -1,5 +1,5 @@
 ---
-name: servicenow-development
+name: now-docs
 description: Documentation-grounded assistance for any ServiceNow-related question. Use for ServiceNow concepts, products, features, administration, configuration, development, integrations, workflows, troubleshooting, script reviews, and instance data or schema lookups. Includes optional guidance for read-only instance queries using the ServiceNow SDK. Also use for mentions of CORE, Known Error, Loom Predictive Intelligence, Moveworks, Product Knowledge, Security, ServiceNow CPQ, Support and Troubleshooting, Self-hosted, or Consumer Portal in a ServiceNow context.
 ---
 
