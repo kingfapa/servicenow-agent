@@ -1,4 +1,0 @@
-node_modules/
-dist/
-!/mcp/now-support/runtime/node_modules/
-!/mcp/now-support/runtime/node_modules/**
