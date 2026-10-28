@@ -20,6 +20,27 @@ Before answering a ServiceNow-related question or generating ServiceNow code:
 
 If the tools or repository are unavailable, or no relevant documentation is found, clearly state that limitation. Never claim verification without having retrieved supporting documentation.
 
+## Now Support knowledge base
+
+Consult the official [Now Support knowledge base](https://support.servicenow.com/kb?id=kb_home) when troubleshooting errors, known issues, or looking for documented fixes and workarounds.
+
+- Use available web-search or browsing tools to find relevant articles, including searches with `site:support.servicenow.com/kb` and relevant error messages or keywords.
+- Read the article before relying on it; search snippets alone do not verify its contents. Check affected products, release families, versions, and any fix or workaround conditions.
+- Cite the verified direct article URL and KB number when available, rather than linking only to the knowledge base home page. Distinguish official support guidance from community advice.
+- Some articles may require authentication or support entitlements. If access is restricted, state what could not be verified and ask the user to share a relevant non-sensitive excerpt if needed. Do not bypass access restrictions or request credentials.
+
+### User-controlled sign-in
+
+When an article requires login and the available browser integration supports interactive user sign-in:
+
+1. Open Now Support in that browser, or reuse an existing shared Now Support tab. Ask the user to complete sign-in, SSO, and MFA directly in the browser, then confirm when finished. Do not inspect or capture login forms while the user is entering credentials.
+2. Never request, read, copy, or store passwords, MFA codes, session cookies, or authentication tokens. Do not extract browser sessions or transfer them to other tools.
+3. After the user confirms sign-in, continue in the same browser session. Search for the article and verify that its body is readable before claiming access; a title, search result, or successful login alone does not establish article access.
+4. Read only material relevant to the request and permitted by the user's entitlements. Cite verified direct article links and KB numbers. Do not save restricted article bodies in the plugin, repository, or a shared index.
+5. If the session expires, ask the user to sign in again directly. If authenticated browsing is unavailable or access remains denied, explain the limitation and request a relevant non-sensitive excerpt instead.
+
+Do not assume that signing in to the user's normal browser authenticates an integrated browser or a URL-fetch tool. This workflow depends on client-provided browser capabilities; the skill itself does not provide authentication or manage session persistence.
+
 ## Community research
 
 Supplement official documentation with [ServiceNow Community](https://www.servicenow.com/community/) posts and discussions in [r/servicenow](https://www.reddit.com/r/servicenow/) when practical examples, user experiences, troubleshooting, known issues, or workarounds would help.
