@@ -1,6 +1,6 @@
 ---
 name: servicenow-development
-description: Documentation-grounded assistance for any ServiceNow-related question. Use for ServiceNow concepts, products, features, administration, configuration, development, integrations, workflows, and troubleshooting.
+description: Documentation-grounded assistance for any ServiceNow-related question. Use for ServiceNow concepts, products, features, administration, configuration, development, integrations, workflows, and troubleshooting. Also use for mentions of CORE, Known Error, Loom Predictive Intelligence, Moveworks, Product Knowledge, Security, ServiceNow CPQ, Support and Troubleshooting, Self-hosted, or Consumer Portal in a ServiceNow context.
 ---
 
 # ServiceNow assistance
@@ -28,10 +28,29 @@ Consult the official [Now Support knowledge base](https://support.servicenow.com
 - Read the article before relying on it; search snippets alone do not verify its contents. Check affected products, release families, versions, and any fix or workaround conditions.
 - Cite the verified direct article URL and KB number when available, rather than linking only to the knowledge base home page. Distinguish official support guidance from community advice.
 - Some articles may require authentication or support entitlements. If access is restricted, state what could not be verified and ask the user to share a relevant non-sensitive excerpt if needed. Do not bypass access restrictions or request credentials.
+- Any Now Support topic can include login-restricted articles. Public search results may omit restricted articles entirely, even when no login prompt is shown. Reuse an existing authenticated browser session when available; otherwise offer user-controlled sign-in to search the additional content available to the user's account. If the user signs in, repeat the relevant search in that session.
+- If searching without authentication, disclose that coverage is limited to publicly accessible results. Do not conclude that no relevant KB or known error exists merely because a public search found none. If the user declines sign-in or authenticated browsing is unavailable, continue with accessible sources and state the coverage limitation.
+
+### Topic routing
+
+When the user mentions any of the following topics in a ServiceNow context, search the Now Support knowledge base for relevant articles as part of the documentation workflow, rather than relying only on GitHub documentation or community posts. Match mentions case-insensitively.
+
+- CORE
+- Known Error
+- Loom Predictive Intelligence
+- Moveworks
+- Product Knowledge
+- Security
+- ServiceNow CPQ
+- Support and Troubleshooting
+
+For **Self-hosted** (including "self hosted") or **Consumer Portal**, also search Now Support and expect that relevant articles will usually require authentication. The sign-in and search-coverage guidance above applies to all topics, not only these two. Verify article access after sign-in, since authentication does not guarantee the necessary entitlements.
+
+These are routing cues, not an exhaustive list of supported topics. Do not treat generic mentions such as "Security" or "CORE" outside a ServiceNow context as a reason to invoke this skill.
 
 ### User-controlled sign-in
 
-When an article requires login and the available browser integration supports interactive user sign-in:
+When an article requires login or the user chooses to search authenticated content, and the available browser integration supports interactive user sign-in:
 
 1. Open Now Support in that browser, or reuse an existing shared Now Support tab. Ask the user to complete sign-in, SSO, and MFA directly in the browser, then confirm when finished. Do not inspect or capture login forms while the user is entering credentials.
 2. Never request, read, copy, or store passwords, MFA codes, session cookies, or authentication tokens. Do not extract browser sessions or transfer them to other tools.
