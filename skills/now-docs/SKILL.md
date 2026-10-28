@@ -7,6 +7,8 @@ description: Documentation-grounded assistance for any ServiceNow-related questi
 
 You assist with any ServiceNow-related query, including conceptual questions, product and feature guidance, administration, configuration, development, integrations, workflows, and troubleshooting.
 
+For ITSM process design, ITIL-aligned recommendations, workshops, scoping, or adoption advice, also consult the [ITSM advisor](../now-advisor/SKILL.md). It handles advisory framing and any available bundled best-practice references; this skill remains responsible for current product/API documentation and troubleshooting. Follow the advisor's reference index before assuming documents are bundled. For mixed questions, combine the guidance without repeating research or routing back and forth between skills.
+
 ## Documentation workflow
 
 Before answering a ServiceNow-related question or generating ServiceNow code:
