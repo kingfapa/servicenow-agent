@@ -28,45 +28,32 @@ document collection tool is separate maintainer tooling.
 
 ## Install in VS Code
 
+These steps use the VS Code 1.144 installation flow with **Copilot** selected.
+
 ### 1. Add the marketplace
 
 Open the Command Palette (`Ctrl+Shift+P` on Windows/Linux or `Cmd+Shift+P` on
-macOS), then run **Preferences: Open User Settings (JSON)**.
+macOS), then run **Chat: Add plugin marketplace**.
 
-Add `kingfapa/servicenow-agent` to `chat.plugins.marketplaces`:
-
-```json
-{
-  "chat.plugins.marketplaces": [
-    "kingfapa/servicenow-agent"
-  ]
-}
-```
-
-Merge this setting into your existing settings rather than replacing the file.
-If you already have marketplaces configured, append this entry to the existing
-array.
-
-Alternatively, open Settings, search for `chat.plugins.marketplaces`, and add
-`kingfapa/servicenow-agent` to the list.
+Enter `kingfapa/servicenow-agent` and confirm.
 
 **Adding the marketplace does not install the plugin.** Continue with the next
 step.
 
 ### 2. Install the plugin
 
-1. Run **Chat: Open Customizations** from the Command Palette.
-2. Select **Plugins**, then **Browse** (or the **Browse** tab, depending on your
-   VS Code version).
-3. Find **servicenow-agent** from **servicenow-agent-marketplace**.
+1. Select the marketplace you just added.
+2. Select **Browse**.
+3. In the modal that opens, find **servicenow-agent**.
 4. Review the plugin contents and select **Install**.
 5. If VS Code asks you to trust the marketplace, review its source before
    confirming.
 
 ### 3. Verify installation
 
-In the Agent Customizations editor, confirm that **servicenow-agent** is listed
-and enabled. Open its details and check that these skills are available:
+Run **Chat: Open Customizations** from the Command Palette. In the Agent
+Customizations editor, confirm that **servicenow-agent** is listed and enabled
+for Copilot. Open its details and check that these skills are available:
 
 | Skill | Purpose |
 |---|---|
@@ -94,6 +81,13 @@ advisor should disclose when relevant.
   agent harness and organization policy.
 - **The marketplace is listed but the skills are missing:** adding the marketplace
   only enables discovery. Install **servicenow-agent**, then confirm it is enabled.
+- **"The selected agent does not support SDK plugin installation" in WSL:**
+  this has been observed in a WSL-connected window on VS Code 1.144 while
+  installation succeeded in a local Windows window. Try the installation steps
+  in a separate window that is not connected to WSL. Then reload the WSL window
+  and check skill availability in a fresh Copilot chat; a Windows installation
+  does not guarantee availability in WSL. This error does not mean you need to
+  install the ServiceNow SDK. Avoid manually deleting plugin folders.
 
 For more information, see the
 [VS Code agent plugins documentation](https://code.visualstudio.com/docs/agent-customization/agent-plugins).
