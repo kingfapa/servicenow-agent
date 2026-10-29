@@ -1,0 +1,1476 @@
+{
+  "schemaVersion": 1,
+  "collections": {
+    "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices": {
+      "discoveredAt": "2026-10-28T21:10:31.212Z",
+      "categoryCounts": {
+        "Success Packs": 8,
+        "Process Guide": 15,
+        "Recommended Implementation Sequence": 1,
+        "Process Workshop Presentation": 19,
+        "Starter Stories": 15,
+        "Implementation Guide": 2,
+        "Scoping Guide": 1,
+        "Product Workbook": 1,
+        "Product White Paper": 4,
+        "Knowledge Transfer": 1,
+        "Customer Workshop Preparation": 1,
+        "Implementation Insights": 2,
+        "Deployment Guide": 5,
+        "Product Integration Options Presentation": 1
+      },
+      "resourceUrls": [
+        "https://mynow.servicenow.com/now/best-practices/assets/change-management-process-guide",
+        "https://mynow.servicenow.com/now/best-practices/assets/change-management-process-workshop",
+        "https://mynow.servicenow.com/now/best-practices/assets/change-management-starter-stories",
+        "https://mynow.servicenow.com/now/best-practices/assets/continual-improvement-management-process-guide",
+        "https://mynow.servicenow.com/now/best-practices/assets/continual-improvement-management-process-workshop",
+        "https://mynow.servicenow.com/now/best-practices/assets/continual-improvement-management-starter-stories",
+        "https://mynow.servicenow.com/now/best-practices/assets/csdm-product-views",
+        "https://mynow.servicenow.com/now/best-practices/assets/devops-change-velocity-deployment-guide",
+        "https://mynow.servicenow.com/now/best-practices/assets/devops-change-velocity-process-workshop-presentation",
+        "https://mynow.servicenow.com/now/best-practices/assets/devops-change-velocity-product-integration-options",
+        "https://mynow.servicenow.com/now/best-practices/assets/devops-change-velocity-starter-stories",
+        "https://mynow.servicenow.com/now/best-practices/assets/dex-acc-servicenow-shared-services-data-flow",
+        "https://mynow.servicenow.com/now/best-practices/assets/digital-enduser-experience-dex-process-guide",
+        "https://mynow.servicenow.com/now/best-practices/assets/digital-enduser-experience-dex-process-workshop",
+        "https://mynow.servicenow.com/now/best-practices/assets/digital-enduser-experience-dex-starter-stories",
+        "https://mynow.servicenow.com/now/best-practices/assets/digital-product-release-process-guide",
+        "https://mynow.servicenow.com/now/best-practices/assets/digital-product-release-process-workshop-presentation",
+        "https://mynow.servicenow.com/now/best-practices/assets/digital-product-release-starter-stories",
+        "https://mynow.servicenow.com/now/best-practices/assets/incident-management-process-guide",
+        "https://mynow.servicenow.com/now/best-practices/assets/incident-management-process-workshop",
+        "https://mynow.servicenow.com/now/best-practices/assets/incident-management-starter-stories",
+        "https://mynow.servicenow.com/now/best-practices/assets/it-service-management-itsm-scoping-guide",
+        "https://mynow.servicenow.com/now/best-practices/assets/itam-for-financial-services-process-guide",
+        "https://mynow.servicenow.com/now/best-practices/assets/itam-for-financial-services-process-workshop",
+        "https://mynow.servicenow.com/now/best-practices/assets/itsm-process-diagrams-incmiprbchg",
+        "https://mynow.servicenow.com/now/best-practices/assets/leading-practices-for-catalog-design-whitepaper",
+        "https://mynow.servicenow.com/now/best-practices/assets/major-incident-management-process-guide",
+        "https://mynow.servicenow.com/now/best-practices/assets/major-incident-management-process-workshop-presentation",
+        "https://mynow.servicenow.com/now/best-practices/assets/major-incident-management-starter-stories-and-story-tests",
+        "https://mynow.servicenow.com/now/best-practices/assets/now-assist-for-itom-implementation-guide",
+        "https://mynow.servicenow.com/now/best-practices/assets/now-assist-for-itsm-implementation-guide",
+        "https://mynow.servicenow.com/now/best-practices/assets/oncall-scheduling-process-guide",
+        "https://mynow.servicenow.com/now/best-practices/assets/oncall-scheduling-process-workshop",
+        "https://mynow.servicenow.com/now/best-practices/assets/oncall-scheduling-starter-stories",
+        "https://mynow.servicenow.com/now/best-practices/assets/problem-management-process-guide",
+        "https://mynow.servicenow.com/now/best-practices/assets/problem-management-process-workshop",
+        "https://mynow.servicenow.com/now/best-practices/assets/problem-management-starter-stories",
+        "https://mynow.servicenow.com/now/best-practices/assets/release-management-process-guide",
+        "https://mynow.servicenow.com/now/best-practices/assets/release-management-process-workshop",
+        "https://mynow.servicenow.com/now/best-practices/assets/release-management-starter-stories",
+        "https://mynow.servicenow.com/now/best-practices/assets/service-catalog-and-request-management-implementation-insights",
+        "https://mynow.servicenow.com/now/best-practices/assets/service-catalog-and-request-management-process-workshop-presentation",
+        "https://mynow.servicenow.com/now/best-practices/assets/service-catalog-and-request-mgmt-catalog-item-design-template",
+        "https://mynow.servicenow.com/now/best-practices/assets/service-catalog-and-request-mgmt-process-guide",
+        "https://mynow.servicenow.com/now/best-practices/assets/service-catalog-and-request-mgmt-starter-stories",
+        "https://mynow.servicenow.com/now/best-practices/assets/service-catalog-and-request-mgmt-workshop-preparation-guide",
+        "https://mynow.servicenow.com/now/best-practices/assets/service-catalog-and-request-process-diagrams",
+        "https://mynow.servicenow.com/now/best-practices/assets/service-level-management-process-workshop",
+        "https://mynow.servicenow.com/now/best-practices/assets/service-operations-recommended-implementation-sequence",
+        "https://mynow.servicenow.com/now/best-practices/assets/service-operations-workspace-process-workshop-presentation",
+        "https://mynow.servicenow.com/now/best-practices/assets/service-operations-workspace-starter-stories",
+        "https://mynow.servicenow.com/now/best-practices/assets/service-portfolio-management-process-guide",
+        "https://mynow.servicenow.com/now/best-practices/assets/service-portfolio-management-process-workshop",
+        "https://mynow.servicenow.com/now/best-practices/assets/service-portfolio-management-starter-stories",
+        "https://mynow.servicenow.com/now/best-practices/assets/service-reliability-management-process-workshop-presentation",
+        "https://mynow.servicenow.com/now/best-practices/assets/software-asset-management-implementation-insights",
+        "https://mynow.servicenow.com/now/best-practices/assets/success-dashboards-benchmarks-process-workshop-presentation",
+        "https://mynow.servicenow.com/now/best-practices/assets/walkup-experience-process-guide",
+        "https://mynow.servicenow.com/now/best-practices/assets/walkup-experience-process-workshop",
+        "https://mynow.servicenow.com/now/best-practices/assets/walkup-experience-starter-stories",
+        "https://mynow.servicenow.com/now/best-practices/assets/workforce-optimization-process-guide",
+        "https://mynow.servicenow.com/now/best-practices/assets/workforce-optimization-process-workshop",
+        "https://mynow.servicenow.com/now/best-practices/assets/workforce-optimization-starter-stories",
+        "https://mynow.servicenow.com/now/best-practices/assets/workforce-optimization-wfo-roles",
+        "https://mynow.servicenow.com/now/best-practices/assets/zero-outages-phase-one-major-incident-management",
+        "https://mynow.servicenow.com/now/best-practices/assets/zero-outages-phase-one-on-call-scheduling-best-practice-guide",
+        "https://mynow.servicenow.com/now/best-practices/assets/zero-touch-it-support-aiassisted-to-autonomous",
+        "https://mynow.servicenow.com/now/best-practices/assets/zero-touch-it-support-phase-ii-enhanced-workflows-to-agentic-ai",
+        "https://mynow.servicenow.com/now/best-practices/success-packs/digital-portfolio-management",
+        "https://mynow.servicenow.com/now/best-practices/success-packs/enterprise-devops-foundations",
+        "https://mynow.servicenow.com/now/best-practices/success-packs/hardware-asset-management-foundation",
+        "https://mynow.servicenow.com/now/best-practices/success-packs/itsm-intelligent-automation",
+        "https://mynow.servicenow.com/now/best-practices/success-packs/itsm-modernize-it-service-management",
+        "https://mynow.servicenow.com/now/best-practices/success-packs/now-assist-for-it-service-management-itsm",
+        "https://mynow.servicenow.com/now/best-practices/success-packs/operate-it-as-a-service",
+        "https://mynow.servicenow.com/now/best-practices/success-packs/optimize-itsm"
+      ]
+    }
+  },
+  "resources": {
+    "https://mynow.servicenow.com/now/best-practices/assets/change-management-process-guide": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/change-management-process-guide",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Guide"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:10:31.219Z",
+      "title": "Change Management Process Guide",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Change Management - Process Guide.docx",
+      "sha256": "4d813efd4c9a5e38bb56b2f2f532dee8f722770d9dbc1fdcf508b6f963b506f1",
+      "downloadedAt": "2026-10-28T21:10:42.447Z",
+      "text": "markdown/change-management/change-management-process-guide.md",
+      "textSha256": "11be443def30abc44dddccc1711e1271bb50ae4dd5d53ec4233d96fadb32bbcf",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/change-management-process-workshop": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/change-management-process-workshop",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Workshop Presentation"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:10:44.860Z",
+      "title": "Change Management - Process Workshop",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Change Management - Process Workshop Presentation.pptx",
+      "sha256": "3c2a3423eb40508a1dabf2037f5cb23d5523e4d49c0e909ab8d1f49e18d0a2b1",
+      "downloadedAt": "2026-10-28T21:11:02.336Z",
+      "text": "markdown/change-management/change-management-process-workshop-presentation.md",
+      "textSha256": "d67b7ac72349ac567a57002d28c3b4bcc7e8be7a63086359d48ecbd27ea7ec98",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/change-management-starter-stories": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/change-management-starter-stories",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Starter Stories"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:11:05.915Z",
+      "title": "Change Management - Starter Stories",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Change Management - Starter Stories.xlsx",
+      "sha256": "70a745089707946b8ae29c3eb0a1ad242044b78b05e7b2a7d349de6a9c2856ae",
+      "downloadedAt": "2026-10-28T21:11:11.133Z",
+      "text": "markdown/change-management/change-management-starter-stories.md",
+      "textSha256": "aefd8355ef08a4dc2b630fba1e241bcfd479f0ffe559a8129bbb20e4793feecc",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/continual-improvement-management-process-guide": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/continual-improvement-management-process-guide",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Guide"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:11:13.160Z",
+      "title": "Continual Improvement Management - Process Guide",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "CIM - Process Guide.docx",
+      "sha256": "2d8d28f1d5d671b2eb72a73ba5a3d5c9b7bedb817066e1bd63c951496b8d3eb7",
+      "downloadedAt": "2026-10-28T21:11:20.279Z",
+      "text": "markdown/continual-improvement-management/cim-process-guide.md",
+      "textSha256": "070ec772aea2339bdcdb7de147100b73f45577f26527a1b4e9bc4ea142c1da2c",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/continual-improvement-management-process-workshop": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/continual-improvement-management-process-workshop",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Workshop Presentation"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:11:22.362Z",
+      "title": "Continual Improvement Management - Process Workshop",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "CIM - Process Workshop Presentation.pptx",
+      "sha256": "f9c514c0193570301f75bb48604b28f2e102599ce606d9ba97f9790b4444f07f",
+      "downloadedAt": "2026-10-28T21:11:33.950Z",
+      "text": "markdown/continual-improvement-management/cim-process-workshop-presentation.md",
+      "textSha256": "e576cbdce87575e6fbe36e42a568c2254cf23439385dbef2546288a24524992d",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/continual-improvement-management-starter-stories": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/continual-improvement-management-starter-stories",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Starter Stories"
+      ],
+      "status": "download_failed",
+      "attemptedAt": "2026-10-28T21:11:36.587Z",
+      "title": "Continual Improvement Management - Starter Stories",
+      "release": null,
+      "lastUpdated": null,
+      "error": "locator.click: Error: strict mode violation: getByRole('button', { name: 'Download', exact: true }) resolved to 2 elements:\n    1) <button disabled type=\"button\" aria-label=\"Download\" data-ariadescribedby=\"Download\" class=\"now-button-iconic -tertiary -md is-disabled\">…</button> aka locator('#download').getByRole('button', { name: 'Download' })\n    2) <button type=\"button\" aria-label=\"Download\" data-tooltip=\"Download\" class=\"now-button -primary -md\" data-ariadescribedby=\"Download\">…</button> aka locator('#item-download_button').getByRole('button', { name: 'Download' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Download', exact: true })\u001b[22m\n"
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/csdm-product-views": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/csdm-product-views",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Knowledge Transfer"
+      ],
+      "status": "download_failed",
+      "attemptedAt": "2026-10-28T21:11:41.389Z",
+      "title": "CSDM Product Views",
+      "release": null,
+      "lastUpdated": null,
+      "error": "locator.click: Error: strict mode violation: getByRole('button', { name: 'Download', exact: true }) resolved to 2 elements:\n    1) <button disabled type=\"button\" aria-label=\"Download\" data-ariadescribedby=\"Download\" class=\"now-button-iconic -tertiary -md is-disabled\">…</button> aka locator('#download').getByRole('button', { name: 'Download' })\n    2) <button type=\"button\" aria-label=\"Download\" data-tooltip=\"Download\" class=\"now-button -primary -md\" data-ariadescribedby=\"Download\">…</button> aka locator('#item-download_button').getByRole('button', { name: 'Download' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Download', exact: true })\u001b[22m\n"
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/devops-change-velocity-deployment-guide": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/devops-change-velocity-deployment-guide",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Deployment Guide"
+      ],
+      "status": "download_failed",
+      "attemptedAt": "2026-10-28T21:11:46.015Z",
+      "error": "locator.waitFor: Error: strict mode violation: getByRole('button', { name: 'Download', exact: true }) resolved to 2 elements:\n    1) <button disabled type=\"button\" aria-label=\"Download\" data-ariadescribedby=\"Download\" class=\"now-button-iconic -tertiary -md is-disabled\">…</button> aka locator('#download').getByRole('button', { name: 'Download' })\n    2) <button type=\"button\" aria-label=\"Download\" data-tooltip=\"Download\" class=\"now-button -primary -md\" data-ariadescribedby=\"Download\">…</button> aka locator('#item-download_button').getByRole('button', { name: 'Download' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Download', exact: true }) to be visible\u001b[22m\n"
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/devops-change-velocity-process-workshop-presentation": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/devops-change-velocity-process-workshop-presentation",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Workshop Presentation"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:11:52.370Z",
+      "title": "DevOps Change Velocity - Process Workshop Presentation",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "DevOps Change Velocity - Process Workshop.pptx",
+      "sha256": "30b1a042c343eb9a7596dead3bbc8b9b6677831eab9357cb6a630a42c58d1040",
+      "downloadedAt": "2026-10-28T21:12:10.003Z",
+      "text": "markdown/devops-change-velocity/devops-change-velocity-process-workshop.md",
+      "textSha256": "0561709a335fc43c0bda09ce63bc68bd152656fe335f788d58c28d95ecd1a562",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/devops-change-velocity-product-integration-options": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/devops-change-velocity-product-integration-options",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Product Integration Options Presentation"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:12:14.244Z",
+      "title": "DevOps Change Velocity - Product Integration Options",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "DevOps Change Velocity - Product Integration Options.pptx",
+      "sha256": "2da67dce74b9dc1296c8da7856add01ae0a895c957d70399dd4792250ce41345",
+      "downloadedAt": "2026-10-28T21:12:26.557Z",
+      "text": "markdown/devops-change-velocity/devops-change-velocity-product-integration-options.md",
+      "textSha256": "5632192ea598a91e74b88a24ed3154e8e4de892dda485ea30a72fae15901782a",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/devops-change-velocity-starter-stories": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/devops-change-velocity-starter-stories",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Starter Stories"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:12:29.039Z",
+      "title": "DevOps Change Velocity - Starter Stories",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "DevOps Change Velocity - Starter Stories.xlsx",
+      "sha256": "8c3ce31644d4ff802315ddc6f8bc80de3d03be27977f68e95e7a8390dafe4372",
+      "downloadedAt": "2026-10-28T21:12:36.167Z",
+      "text": "markdown/devops-change-velocity/devops-change-velocity-starter-stories.md",
+      "textSha256": "0a068acfcf368819bad05b4c9ce34f0fa98c67914f5d897e2b7548c480828a50",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/dex-acc-servicenow-shared-services-data-flow": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/dex-acc-servicenow-shared-services-data-flow",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Product White Paper"
+      ],
+      "status": "download_failed",
+      "attemptedAt": "2026-10-28T21:12:38.194Z",
+      "title": "DEX - ACC ServiceNow Shared Services Data Flow",
+      "release": null,
+      "lastUpdated": null,
+      "error": "locator.click: Error: strict mode violation: getByRole('button', { name: 'Download', exact: true }) resolved to 2 elements:\n    1) <button disabled type=\"button\" aria-label=\"Download\" data-ariadescribedby=\"Download\" class=\"now-button-iconic -tertiary -md is-disabled\">…</button> aka locator('#download').getByRole('button', { name: 'Download' })\n    2) <button type=\"button\" aria-label=\"Download\" data-tooltip=\"Download\" class=\"now-button -primary -md\" data-ariadescribedby=\"Download\">…</button> aka locator('#item-download_button').getByRole('button', { name: 'Download' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Download', exact: true })\u001b[22m\n"
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/digital-enduser-experience-dex-process-guide": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/digital-enduser-experience-dex-process-guide",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Guide"
+      ],
+      "status": "download_failed",
+      "attemptedAt": "2026-10-28T21:12:43.937Z",
+      "title": "Digital End-User Experience (DEX) - Process Guide",
+      "release": null,
+      "lastUpdated": null,
+      "error": "locator.click: Error: strict mode violation: getByRole('button', { name: 'Download', exact: true }) resolved to 2 elements:\n    1) <button disabled type=\"button\" aria-label=\"Download\" data-ariadescribedby=\"Download\" class=\"now-button-iconic -tertiary -md is-disabled\">…</button> aka locator('#download').getByRole('button', { name: 'Download' })\n    2) <button type=\"button\" aria-label=\"Download\" data-tooltip=\"Download\" class=\"now-button -primary -md\" data-ariadescribedby=\"Download\">…</button> aka locator('#item-download_button').getByRole('button', { name: 'Download' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Download', exact: true })\u001b[22m\n"
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/digital-enduser-experience-dex-process-workshop": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/digital-enduser-experience-dex-process-workshop",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Workshop Presentation"
+      ],
+      "status": "extraction_failed",
+      "attemptedAt": "2026-10-28T21:12:49.415Z",
+      "title": "Digital End-User Experience (DEX) - Process Workshop",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "DEX - Process Workshop Presentation.pptx",
+      "sha256": "84e27d5ef261dd81e831b8c091a02269c81eee03e5a3d5b74adfb9f54da335b4",
+      "downloadedAt": "2026-10-28T21:13:09.875Z",
+      "text": null,
+      "error": "Archive exceeds the 100 MiB cumulative expanded-size limit",
+      "textSha256": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/digital-enduser-experience-dex-starter-stories": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/digital-enduser-experience-dex-starter-stories",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Starter Stories"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:13:12.663Z",
+      "title": "Digital End-User Experience (DEX) - Starter Stories",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "DEX - Starter Stories.xlsx",
+      "sha256": "0a9475de1fdf50a7cbe055c6111add86d034f8ac43edd1e25c531c90f98bd2d1",
+      "downloadedAt": "2026-10-28T21:13:17.619Z",
+      "text": "markdown/digital-end-user-experience-dex/dex-starter-stories.md",
+      "textSha256": "fa59af9f0268dfe35930e42030161dd56fe4692b6efdee4b5619dedf8516d3d9",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/digital-product-release-process-guide": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/digital-product-release-process-guide",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Guide"
+      ],
+      "status": "download_failed",
+      "attemptedAt": "2026-10-28T21:13:19.633Z",
+      "title": "Digital Product Release - Process Guide",
+      "release": null,
+      "lastUpdated": null,
+      "error": "locator.click: Error: strict mode violation: getByRole('button', { name: 'Download', exact: true }) resolved to 2 elements:\n    1) <button disabled type=\"button\" aria-label=\"Download\" data-ariadescribedby=\"Download\" class=\"now-button-iconic -tertiary -md is-disabled\">…</button> aka locator('#download').getByRole('button', { name: 'Download' })\n    2) <button type=\"button\" aria-label=\"Download\" data-tooltip=\"Download\" class=\"now-button -primary -md\" data-ariadescribedby=\"Download\">…</button> aka locator('#item-download_button').getByRole('button', { name: 'Download' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Download', exact: true })\u001b[22m\n"
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/digital-product-release-process-workshop-presentation": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/digital-product-release-process-workshop-presentation",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Workshop Presentation"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:13:25.081Z",
+      "title": "Digital Product Release - Process Workshop Presentation",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Digital Product Release - Process Workshop Presentation.pptx",
+      "sha256": "d96de59ffdd2f9af7daeb0a6e2efd62e21dce4f0d7be74810c66bb0bc845b29e",
+      "downloadedAt": "2026-10-28T21:13:41.594Z",
+      "text": "markdown/digital-product-release/digital-product-release-process-workshop-presentation.md",
+      "textSha256": "4e292d4a5c27b73a97551baa6772fb208079a643e88431dc2690404ff109c04c",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/digital-product-release-starter-stories": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/digital-product-release-starter-stories",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Starter Stories"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:13:44.557Z",
+      "title": "Digital Product Release - Starter Stories",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Digital Product Release - Starter Stories.xlsx",
+      "sha256": "95dd26afe168ba7b9cff072d0b26813e72f0cf956faecf13f0b141bf8b2cb0db",
+      "downloadedAt": "2026-10-28T21:13:49.356Z",
+      "text": "markdown/digital-product-release/digital-product-release-starter-stories.md",
+      "textSha256": "27f166ec7c2d7819d2fd7dcb0e44ee10e87cc3044ec6d0b64a67dd23fa3f717f",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/incident-management-process-guide": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/incident-management-process-guide",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Guide"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:13:51.371Z",
+      "title": "Incident Management - Process Guide",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Incident Management - Process Guide.docx",
+      "sha256": "893c79d3b40237b10488c62cb06019256339281079dd97f72387edfea7a7f0f6",
+      "downloadedAt": "2026-10-28T21:13:57.091Z",
+      "text": "markdown/incident-management/incident-management-process-guide.md",
+      "textSha256": "250760736ba111217fcd06b3ef1c1653fd0a189aca8b4a8fbb0b6c1aaeb2ed87",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/incident-management-process-workshop": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/incident-management-process-workshop",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Workshop Presentation"
+      ],
+      "status": "extraction_failed",
+      "attemptedAt": "2026-10-28T21:13:59.393Z",
+      "title": "Incident Management - Process Workshop",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Incident Management - Process Workshop Presentation.pptx",
+      "sha256": "99de0541f24ac3363acf5afff61e4bce10a00fbc5f107549cafcdfca3bd5b040",
+      "downloadedAt": "2026-10-28T21:14:22.034Z",
+      "text": null,
+      "error": "Archive exceeds the 100 MiB cumulative expanded-size limit",
+      "textSha256": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/incident-management-starter-stories": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/incident-management-starter-stories",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Starter Stories"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:14:24.755Z",
+      "title": "Incident Management - Starter Stories",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Incident Management - Starter Stories.xlsx",
+      "sha256": "03546e29ab9af13f905076cc4c3eab49e7f60bfaeb7e81438d330441ecbf7bc4",
+      "downloadedAt": "2026-10-28T21:14:30.412Z",
+      "text": "markdown/incident-management/incident-management-starter-stories.md",
+      "textSha256": "332185c2c4a9576914442ddd0e72a5dc495d669fea29432b54cd5583c32e8c87",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/it-service-management-itsm-scoping-guide": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/it-service-management-itsm-scoping-guide",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Scoping Guide"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:14:32.432Z",
+      "title": "IT Service Management (ITSM) - Scoping Guide",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "IT Service Management (ITSM) - Scoping Guide - Australia.docx",
+      "sha256": "6613a235f1cf5768ab336c8099e1c4772667445c93744bb215b90afb46a13a0f",
+      "downloadedAt": "2026-10-28T21:14:36.878Z",
+      "text": "markdown/it-service-management-itsm/it-service-management-itsm-scoping-guide-australia.md",
+      "textSha256": "5fa03a4ddfed800281f16c17e3893ff4edf0a69f585e8423f8b0238bbeb5cb9d",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/itam-for-financial-services-process-guide": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/itam-for-financial-services-process-guide",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Guide"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:14:39.002Z",
+      "title": "ITAM for Financial Services - Process Guide",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "ITAM for Financial Services - Process Guide - Australia.docx",
+      "sha256": "8954e788ebf0ba6016cc378bf0dffd0abe849fc53383fad3051545b7d433c2ca",
+      "downloadedAt": "2026-10-28T21:14:45.124Z",
+      "text": "markdown/itam-for-financial-services/itam-for-financial-services-process-guide-australia.md",
+      "textSha256": "e9c9b52361925452606245fb8316711bde789b363b9c1d0a63548a20e6bc7936",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/itam-for-financial-services-process-workshop": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/itam-for-financial-services-process-workshop",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Workshop Presentation"
+      ],
+      "status": "extraction_failed",
+      "attemptedAt": "2026-10-28T21:14:47.177Z",
+      "title": "ITAM for Financial Services - Process Workshop",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "ITAM for Financial Services - Process Workshop - Australia.pptx",
+      "sha256": "cac5b680ff6e3c93d2afe5013f19c77c4a7ac420db83c777eaf5e375296a95c8",
+      "downloadedAt": "2026-10-28T21:15:16.580Z",
+      "text": null,
+      "error": "Archive exceeds the 100 MiB cumulative expanded-size limit",
+      "textSha256": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/itsm-process-diagrams-incmiprbchg": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/itsm-process-diagrams-incmiprbchg",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Product White Paper"
+      ],
+      "status": "extraction_failed",
+      "attemptedAt": "2026-10-28T21:15:19.325Z",
+      "title": "ITSM Process Diagrams - Inc/MI/Prb/Chg",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "ITSM Process Diagram - Inc Prb Chg MIM.zip",
+      "sha256": "4376af1ee565bd73d2bb65bdf5d32f98b451e7dcea0dd26616a0df84e7f1cbd3",
+      "downloadedAt": "2026-10-28T21:15:25.808Z",
+      "text": null,
+      "error": "Archive member requires manual review: Incident Management Diagrams - v1.vsdx",
+      "textSha256": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/leading-practices-for-catalog-design-whitepaper": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/leading-practices-for-catalog-design-whitepaper",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Product White Paper"
+      ],
+      "status": "download_failed",
+      "attemptedAt": "2026-10-28T21:15:27.813Z",
+      "title": "Leading Practices for Catalog Design - Whitepaper",
+      "release": null,
+      "lastUpdated": null,
+      "error": "locator.click: Error: strict mode violation: getByRole('button', { name: 'Download', exact: true }) resolved to 2 elements:\n    1) <button disabled type=\"button\" aria-label=\"Download\" data-ariadescribedby=\"Download\" class=\"now-button-iconic -tertiary -md is-disabled\">…</button> aka locator('#download').getByRole('button', { name: 'Download' })\n    2) <button type=\"button\" aria-label=\"Download\" data-tooltip=\"Download\" class=\"now-button -primary -md\" data-ariadescribedby=\"Download\">…</button> aka locator('#item-download_button').getByRole('button', { name: 'Download' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Download', exact: true })\u001b[22m\n"
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/major-incident-management-process-guide": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/major-incident-management-process-guide",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Guide"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:15:33.109Z",
+      "title": "Major Incident Management Process Guide",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Major Incident Management - Process Guide.docx",
+      "sha256": "b9207b052db65bbfd3ab5de72b7449ae29274f7f3e3c47549a0a63c07a159810",
+      "downloadedAt": "2026-10-28T21:15:39.414Z",
+      "text": "markdown/major-incident-management/major-incident-management-process-guide.md",
+      "textSha256": "d82141fb4604a1a4acfa42606840585e643a9e97807c1c46c652d42a0b3b761f",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/major-incident-management-process-workshop-presentation": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/major-incident-management-process-workshop-presentation",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Workshop Presentation"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:15:41.473Z",
+      "title": "Major Incident Management - Process Workshop Presentation",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Major Incident Management - Process Workshop Presentation.pptx",
+      "sha256": "7ecbf2d0db1a176fd4b6d0fc9f57cd5cbe5340e6cf5ed5a38de24d05ac050e07",
+      "downloadedAt": "2026-10-28T21:15:52.455Z",
+      "text": "markdown/major-incident-management/major-incident-management-process-workshop-presentation.md",
+      "textSha256": "929b50eccab822f6b1e0c6bac5145fed5d662a28bec33b0172dc440aa7d41af9",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/major-incident-management-starter-stories-and-story-tests": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/major-incident-management-starter-stories-and-story-tests",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Starter Stories"
+      ],
+      "status": "download_failed",
+      "attemptedAt": "2026-10-28T21:15:54.875Z",
+      "error": "locator.waitFor: Error: strict mode violation: getByRole('button', { name: 'Download', exact: true }) resolved to 2 elements:\n    1) <button disabled type=\"button\" aria-label=\"Download\" data-ariadescribedby=\"Download\" class=\"now-button-iconic -tertiary -md is-disabled\">…</button> aka locator('#download').getByRole('button', { name: 'Download' })\n    2) <button type=\"button\" aria-label=\"Download\" data-tooltip=\"Download\" class=\"now-button -primary -md\" data-ariadescribedby=\"Download\">…</button> aka locator('#item-download_button').getByRole('button', { name: 'Download' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Download', exact: true }) to be visible\u001b[22m\n"
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/now-assist-for-itom-implementation-guide": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/now-assist-for-itom-implementation-guide",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Implementation Guide"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:16:00.264Z",
+      "title": "Now Assist for ITOM - Implementation Guide",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Now Assist for ITOM - Implementation Guide.pdf",
+      "sha256": "32333da78683f81591c8bcb28bd90707b0ef26bf0c44b456e27501a70fd9d7d9",
+      "downloadedAt": "2026-10-28T21:16:06.893Z",
+      "text": "markdown/now-assist-for-itom/now-assist-for-itom-implementation-guide.md",
+      "textSha256": "c18ace5c147577ef8920e081f0bee8638181287331ac9ca3882ea16b503abdd1",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/now-assist-for-itsm-implementation-guide": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/now-assist-for-itsm-implementation-guide",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Implementation Guide"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:16:09.229Z",
+      "title": "Now Assist for ITSM - Implementation Guide",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Now Assist for ITSM - Implementation Guide.pdf",
+      "sha256": "e7cc8be23354ae61017b172dbf39a8b5db0ad78f85d1357dea122967ee607b2d",
+      "downloadedAt": "2026-10-28T21:16:16.835Z",
+      "text": "markdown/now-assist-for-itsm/now-assist-for-itsm-implementation-guide.md",
+      "textSha256": "04b06665a635232ed4adb6695ef9499051c165260371edde11bf07cda29bd922",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/oncall-scheduling-process-guide": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/oncall-scheduling-process-guide",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Guide"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:16:19.197Z",
+      "title": "On-Call Scheduling Process Guide",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "On-Call Scheduling - Process Guide.docx",
+      "sha256": "01281c8b46278e302f1225c21b693fee2cf67c99264cb9f3d9c5d21b13a9f87f",
+      "downloadedAt": "2026-10-28T21:16:25.098Z",
+      "text": "markdown/oncall-scheduling/on-call-scheduling-process-guide.md",
+      "textSha256": "0ced97582e118865662a4f14d48bb4b25e1a8b70fc9658e714ae849c854654bb",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/oncall-scheduling-process-workshop": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/oncall-scheduling-process-workshop",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Workshop Presentation"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:16:27.183Z",
+      "title": "On-Call Scheduling - Process Workshop",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "On-Call Scheduling - Process Workshop Presentation.pptx",
+      "sha256": "9a7765eee687c17f6e28aa489b88b9734f7b9bab2ba39aed8dc172345c2e27e7",
+      "downloadedAt": "2026-10-28T21:16:38.441Z",
+      "text": "markdown/on-call-scheduling/on-call-scheduling-process-workshop-presentation.md",
+      "textSha256": "a175a187265f6291c68203eb2d47e18ed781fc9313e652fa1ffcb82a4dee5dd8",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/oncall-scheduling-starter-stories": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/oncall-scheduling-starter-stories",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Starter Stories"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:16:40.864Z",
+      "title": "On-Call Scheduling - Starter Stories",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "On-Call Scheduling - Starter Stories.xlsx",
+      "sha256": "94b77ac57c06071520a43fcbda81495a8b65da47472978f4ad0f7fef5938c68c",
+      "downloadedAt": "2026-10-28T21:16:45.569Z",
+      "text": "markdown/on-call-scheduling/on-call-scheduling-starter-stories.md",
+      "textSha256": "38e36d1d45123eeaef71870973346e08f9832a38d8c4768b2ef36224334ebffb",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/problem-management-process-guide": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/problem-management-process-guide",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Guide"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:16:47.581Z",
+      "title": "Problem Management - Process Guide",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Problem Management - Process Guide.docx",
+      "sha256": "52260fa9da19d4acdd995ae0c45bd2d3fb2acd8ae07e2cb3e80729c29f7be4e6",
+      "downloadedAt": "2026-10-28T21:16:54.803Z",
+      "text": "markdown/problem-management/problem-management-process-guide.md",
+      "textSha256": "231503a7a91419ff2f68b61f3e08cc9dda9f9ce5ec955aed60690c9074f56fbf",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/problem-management-process-workshop": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/problem-management-process-workshop",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Workshop Presentation"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:16:57.012Z",
+      "title": "Problem Management - Process Workshop",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Problem Management - Process Workshop Presentation.pptx",
+      "sha256": "1c429d686073b72da892bff56b5b8ed795b0a8fb8fa31622f202dd2fa4913ea0",
+      "downloadedAt": "2026-10-28T21:17:12.889Z",
+      "text": "markdown/problem-management/problem-management-process-workshop-presentation.md",
+      "textSha256": "6ee173b7ad584172998d1ccb1413bad16ad9849e5792a36d7f1b190fea647d63",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/problem-management-starter-stories": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/problem-management-starter-stories",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Starter Stories"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:17:16.172Z",
+      "title": "Problem Management - Starter Stories",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Problem Management - Starter Stories.xlsx",
+      "sha256": "0e58d78fdcf295581593e560df0d3e7cbd69c110526fe878caf664cc3b03e73c",
+      "downloadedAt": "2026-10-28T21:17:20.383Z",
+      "text": "markdown/problem-management/problem-management-starter-stories.md",
+      "textSha256": "d2d024d26ec23996ba944a1a029d602f2dc84eab6e5d33e86b87ce89498a3c4a",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/release-management-process-guide": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/release-management-process-guide",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Guide"
+      ],
+      "status": "download_failed",
+      "attemptedAt": "2026-10-28T21:17:22.407Z",
+      "error": "locator.waitFor: Error: strict mode violation: getByRole('button', { name: 'Download', exact: true }) resolved to 2 elements:\n    1) <button disabled type=\"button\" aria-label=\"Download\" data-ariadescribedby=\"Download\" class=\"now-button-iconic -tertiary -md is-disabled\">…</button> aka locator('#download').getByRole('button', { name: 'Download' })\n    2) <button type=\"button\" aria-label=\"Download\" data-tooltip=\"Download\" class=\"now-button -primary -md\" data-ariadescribedby=\"Download\">…</button> aka locator('#item-download_button').getByRole('button', { name: 'Download' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Download', exact: true }) to be visible\u001b[22m\n"
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/release-management-process-workshop": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/release-management-process-workshop",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Workshop Presentation"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:17:26.854Z",
+      "title": "Release Management - Process Workshop",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Release Management - Process Workshop Presentation.pptx",
+      "sha256": "13e57457ed8dc531990d4fb520058d71404432697f256c3613dd9495750cc89b",
+      "downloadedAt": "2026-10-28T21:17:35.991Z",
+      "text": "markdown/release-management/release-management-process-workshop-presentation.md",
+      "textSha256": "82e38073d1abc6522ed0bff53efdd1c7d2c547ced80eded72145fb079ca4c39d",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/release-management-starter-stories": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/release-management-starter-stories",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Starter Stories"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:17:38.335Z",
+      "title": "Release Management - Starter Stories",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Release Management - Starter Stories.xlsx",
+      "sha256": "73e1b8dbca037959eb2a0670a6f3e0a94c75cee66ac92e750f69338fe42b2d5f",
+      "downloadedAt": "2026-10-28T21:17:41.701Z",
+      "text": "markdown/release-management/release-management-starter-stories.md",
+      "textSha256": "5c9a4dc14874f9a376998f8550659325d010a507d64ffba103ce063bd9b610bd",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/service-catalog-and-request-management-implementation-insights": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/service-catalog-and-request-management-implementation-insights",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Implementation Insights"
+      ],
+      "status": "download_failed",
+      "attemptedAt": "2026-10-28T21:17:43.713Z",
+      "error": "locator.waitFor: Error: strict mode violation: getByRole('button', { name: 'Download', exact: true }) resolved to 2 elements:\n    1) <button disabled type=\"button\" aria-label=\"Download\" data-ariadescribedby=\"Download\" class=\"now-button-iconic -tertiary -md is-disabled\">…</button> aka locator('#download').getByRole('button', { name: 'Download' })\n    2) <button type=\"button\" aria-label=\"Download\" data-tooltip=\"Download\" class=\"now-button -primary -md\" data-ariadescribedby=\"Download\">…</button> aka locator('#item-download_button').getByRole('button', { name: 'Download' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Download', exact: true }) to be visible\u001b[22m\n"
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/service-catalog-and-request-management-process-workshop-presentation": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/service-catalog-and-request-management-process-workshop-presentation",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Workshop Presentation"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:17:49.090Z",
+      "title": "Service Catalog and Request Management - Process Workshop Presentation",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Service Catalog and Request - Process Workshop Presentation - Yokohama.pptx",
+      "sha256": "02177efb3d5e1a88127c5e0548e8947de321536c365c44626d880810140ff1b1",
+      "downloadedAt": "2026-10-28T21:18:02.967Z",
+      "text": "markdown/service-catalog-and-request-management/service-catalog-and-request-process-workshop-presentation-yokohama.md",
+      "textSha256": "0fa0162f07e565f6891735b0d63af1f048d67b14ac3acc69ee38df2781d1e98d",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/service-catalog-and-request-mgmt-catalog-item-design-template": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/service-catalog-and-request-mgmt-catalog-item-design-template",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Product Workbook"
+      ],
+      "status": "extraction_failed",
+      "attemptedAt": "2026-10-28T21:18:05.822Z",
+      "title": "Service Catalog and Request Mgmt - Catalog Item Design Template",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Catalog Templates.zip",
+      "sha256": "15c9b0d1be9e1faecd12145ad0652652d4c3c85ec5263a8dfdb0e2fed3b3f820",
+      "downloadedAt": "2026-10-28T21:18:11.361Z",
+      "text": null,
+      "error": "invalid zip data",
+      "textSha256": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/service-catalog-and-request-mgmt-process-guide": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/service-catalog-and-request-mgmt-process-guide",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Guide"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:18:13.445Z",
+      "title": "Service Catalog and Request Mgmt - Process Guide",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Service Catalog and Request - Process Guide - Australia.docx",
+      "sha256": "527e4e7bf068c1d950fad3e3fec7f9c9c1538cecff4a6a5ff21eac023c9790e6",
+      "downloadedAt": "2026-10-28T21:18:18.643Z",
+      "text": "markdown/service-catalog-and-request-mgmt/service-catalog-and-request-process-guide-australia.md",
+      "textSha256": "5c7f4d3931921f463deb6327b1bf3f8511b712fc5c2d8ae7adfb2d87186dd930",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/service-catalog-and-request-mgmt-starter-stories": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/service-catalog-and-request-mgmt-starter-stories",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Starter Stories"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:18:20.789Z",
+      "title": "Service Catalog and Request Mgmt - Starter Stories",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Service Catalog and Request Management - Starter Stories - Australia.xlsx",
+      "sha256": "46f1b5ae31dcff0b595ae09577f0f1171ca5431133ac8a1126f11ea0018cd317",
+      "downloadedAt": "2026-10-28T21:18:24.632Z",
+      "text": "markdown/service-catalog-and-request-mgmt/service-catalog-and-request-management-starter-stories-australia.md",
+      "textSha256": "20888db95825067d2469f5f439814390c6f852400217852fa826315015bb2aeb",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/service-catalog-and-request-mgmt-workshop-preparation-guide": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/service-catalog-and-request-mgmt-workshop-preparation-guide",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Customer Workshop Preparation"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:18:26.645Z",
+      "title": "Service Catalog and Request Mgmt - Workshop Preparation Guide",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Service Catalog and Request - Process Workshop Presentation - Australia.pptx",
+      "sha256": "d2bb0ced2c19a1add0f550204d73131bd9812a484a78f3b81a58eafb187a4320",
+      "downloadedAt": "2026-10-28T21:18:47.494Z",
+      "text": "markdown/service-catalog-and-request-mgmt/service-catalog-and-request-process-workshop-presentation-australia.md",
+      "textSha256": "b5bfd3fbb551df4f75a54d1186318b538aac7858ff468ace09dbef35275b8956",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/service-catalog-and-request-process-diagrams": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/service-catalog-and-request-process-diagrams",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Guide"
+      ],
+      "status": "extraction_failed",
+      "attemptedAt": "2026-10-28T21:18:51.111Z",
+      "title": "Service Catalog and Request - Process Diagrams",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Service Catalog Diagrams - v1.vsdx.zip",
+      "sha256": "98f9699a2171488bbf50bc451f930b21830a1b9a3581ea8306623ef1342ccd51",
+      "downloadedAt": "2026-10-28T21:18:54.570Z",
+      "text": null,
+      "error": "Archive member requires manual review: Service Catalog Diagrams - v1.vsdx",
+      "textSha256": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/service-level-management-process-workshop": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/service-level-management-process-workshop",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Workshop Presentation"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:18:56.578Z",
+      "title": "Service Level Management - Process Workshop",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Service Level Management - Yokohama.pptx",
+      "sha256": "7c7b055ccf6670e3a206d46748c53f51af4a3d095f77a7054f91ff09c98af743",
+      "downloadedAt": "2026-10-28T21:19:05.978Z",
+      "text": "markdown/service-level-management/service-level-management-yokohama.md",
+      "textSha256": "cf031796373c3e98375ae3c8479845dccf72c87d4b0e5caf649e97621b07401f",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/service-operations-recommended-implementation-sequence": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/service-operations-recommended-implementation-sequence",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Recommended Implementation Sequence"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:19:08.292Z",
+      "title": "Service Operations Recommended Implementation Sequence",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Recommended Implementation Sequence - Service Operations.pptx",
+      "sha256": "af0710bb09e3ac5f4f1d0111ea1c07bb7522117d2f024e413df68c3b016647cd",
+      "downloadedAt": "2026-10-28T21:19:16.030Z",
+      "text": "markdown/service-operations/recommended-implementation-sequence-service-operations.md",
+      "textSha256": "23939fd29fc9e12d96bc9cea31d5ff85a720017da11751404cfa3a92de8eca46",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/service-operations-workspace-process-workshop-presentation": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/service-operations-workspace-process-workshop-presentation",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Workshop Presentation"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:19:18.108Z",
+      "title": "Service Operations Workspace - Process Workshop Presentation",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Service Operations Workspace - Process Workshop Presentation - Yokohama.pptx",
+      "sha256": "241c4450e42b82828a32e90920442a04c2da62581f27d5fe03272dcd99fd8ac0",
+      "downloadedAt": "2026-10-28T21:19:29.453Z",
+      "text": "markdown/service-operations-workspace/service-operations-workspace-process-workshop-presentation-yokohama.md",
+      "textSha256": "dfe6a661b4da8f7a182fe97b570939c5815f53f75a0354ed9b0aa69de967590c",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/service-operations-workspace-starter-stories": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/service-operations-workspace-starter-stories",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Starter Stories"
+      ],
+      "status": "download_failed",
+      "attemptedAt": "2026-10-28T21:19:31.880Z",
+      "error": "locator.waitFor: Error: strict mode violation: getByRole('button', { name: 'Download', exact: true }) resolved to 2 elements:\n    1) <button disabled type=\"button\" aria-label=\"Download\" data-ariadescribedby=\"Download\" class=\"now-button-iconic -tertiary -md is-disabled\">…</button> aka locator('#download').getByRole('button', { name: 'Download' })\n    2) <button type=\"button\" aria-label=\"Download\" data-tooltip=\"Download\" class=\"now-button -primary -md\" data-ariadescribedby=\"Download\">…</button> aka locator('#item-download_button').getByRole('button', { name: 'Download' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Download', exact: true }) to be visible\u001b[22m\n"
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/service-portfolio-management-process-guide": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/service-portfolio-management-process-guide",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Guide"
+      ],
+      "status": "download_failed",
+      "attemptedAt": "2026-10-28T21:19:37.368Z",
+      "error": "locator.waitFor: Error: strict mode violation: getByRole('button', { name: 'Download', exact: true }) resolved to 2 elements:\n    1) <button disabled type=\"button\" aria-label=\"Download\" data-ariadescribedby=\"Download\" class=\"now-button-iconic -tertiary -md is-disabled\">…</button> aka locator('#download').getByRole('button', { name: 'Download' })\n    2) <button type=\"button\" aria-label=\"Download\" data-tooltip=\"Download\" class=\"now-button -primary -md\" data-ariadescribedby=\"Download\">…</button> aka locator('#item-download_button').getByRole('button', { name: 'Download' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Download', exact: true }) to be visible\u001b[22m\n"
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/service-portfolio-management-process-workshop": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/service-portfolio-management-process-workshop",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Workshop Presentation"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:19:42.875Z",
+      "title": "Service Portfolio Management - Process Workshop",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Service Portfolio Management - Process Workshop - Yokohama.pptx",
+      "sha256": "0897cebc8db73ed75bbfdebbf86855634530ce0e2cd8604892b03ea304eb25b2",
+      "downloadedAt": "2026-10-28T21:19:52.778Z",
+      "text": "markdown/service-portfolio-management/service-portfolio-management-process-workshop-yokohama.md",
+      "textSha256": "3322d422c8ced1b294ea57309e2d6abb47d3e92ca0ba7f6e36b04f41ae730828",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/service-portfolio-management-starter-stories": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/service-portfolio-management-starter-stories",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Starter Stories"
+      ],
+      "status": "download_failed",
+      "attemptedAt": "2026-10-28T21:19:55.202Z",
+      "title": "Service Portfolio Management - Starter Stories",
+      "release": null,
+      "lastUpdated": null,
+      "error": "locator.click: Error: strict mode violation: getByRole('button', { name: 'Download', exact: true }) resolved to 2 elements:\n    1) <button disabled type=\"button\" aria-label=\"Download\" data-ariadescribedby=\"Download\" class=\"now-button-iconic -tertiary -md is-disabled\">…</button> aka locator('#download').getByRole('button', { name: 'Download' })\n    2) <button type=\"button\" aria-label=\"Download\" data-tooltip=\"Download\" class=\"now-button -primary -md\" data-ariadescribedby=\"Download\">…</button> aka locator('#item-download_button').getByRole('button', { name: 'Download' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Download', exact: true })\u001b[22m\n"
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/service-reliability-management-process-workshop-presentation": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/service-reliability-management-process-workshop-presentation",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Workshop Presentation"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:20:00.591Z",
+      "title": "Service Reliability Management - Process Workshop Presentation",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Service Reliability Management Workshop.pptx",
+      "sha256": "d6c05d285bfa29a741c434d88f47564bb5c825e898372a5e5ea4fbd0ffc4f340",
+      "downloadedAt": "2026-10-28T21:20:11.121Z",
+      "text": "markdown/service-reliability-management/service-reliability-management-workshop.md",
+      "textSha256": "6991fa6b2dad1992f623c6788e42cffc8032119d1fa54d576545363ecb7066c8",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/software-asset-management-implementation-insights": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/software-asset-management-implementation-insights",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Implementation Insights"
+      ],
+      "status": "download_failed",
+      "attemptedAt": "2026-10-28T21:20:13.572Z",
+      "error": "locator.waitFor: Error: strict mode violation: getByRole('button', { name: 'Download', exact: true }) resolved to 2 elements:\n    1) <button disabled type=\"button\" aria-label=\"Download\" data-ariadescribedby=\"Download\" class=\"now-button-iconic -tertiary -md is-disabled\">…</button> aka locator('#download').getByRole('button', { name: 'Download' })\n    2) <button type=\"button\" aria-label=\"Download\" data-tooltip=\"Download\" class=\"now-button -primary -md\" data-ariadescribedby=\"Download\">…</button> aka locator('#item-download_button').getByRole('button', { name: 'Download' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Download', exact: true }) to be visible\u001b[22m\n"
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/success-dashboards-benchmarks-process-workshop-presentation": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/success-dashboards-benchmarks-process-workshop-presentation",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Workshop Presentation"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:20:18.789Z",
+      "title": "Success Dashboards & Benchmarks - Process Workshop presentation",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Success Dashboards and Benchmarks - Process Workshop Presentation.pptx",
+      "sha256": "fe2093729229bc86a4a6d00c19e4fdb9542627ad38bcee11e784ca731fd755a1",
+      "downloadedAt": "2026-10-28T21:20:30.246Z",
+      "text": "markdown/success-dashboards-and-benchmarks/success-dashboards-and-benchmarks-process-workshop-presentation.md",
+      "textSha256": "b47321d6d3ec8b1c41524d5a4d0f838147c062b0c1799a708e813efa08764136",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/walkup-experience-process-guide": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/walkup-experience-process-guide",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Guide"
+      ],
+      "status": "download_failed",
+      "attemptedAt": "2026-10-28T21:20:32.682Z",
+      "error": "locator.waitFor: Error: strict mode violation: getByRole('button', { name: 'Download', exact: true }) resolved to 2 elements:\n    1) <button disabled type=\"button\" aria-label=\"Download\" data-ariadescribedby=\"Download\" class=\"now-button-iconic -tertiary -md is-disabled\">…</button> aka locator('#download').getByRole('button', { name: 'Download' })\n    2) <button type=\"button\" aria-label=\"Download\" data-tooltip=\"Download\" class=\"now-button -primary -md\" data-ariadescribedby=\"Download\">…</button> aka locator('#item-download_button').getByRole('button', { name: 'Download' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Download', exact: true }) to be visible\u001b[22m\n"
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/walkup-experience-process-workshop": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/walkup-experience-process-workshop",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Workshop Presentation"
+      ],
+      "status": "extraction_failed",
+      "attemptedAt": "2026-10-28T21:20:38.529Z",
+      "title": "Walk-Up Experience - Process Workshop",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Walk-up Experience - Process Workshop.pptx",
+      "sha256": "dde78f2a8f7f8a193674ad6fac51506f92cc1fa7e83085dc02880dce4b14a74a",
+      "downloadedAt": "2026-10-28T21:21:08.366Z",
+      "text": null,
+      "error": "Archive exceeds the 100 MiB cumulative expanded-size limit",
+      "textSha256": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/walkup-experience-starter-stories": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/walkup-experience-starter-stories",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Starter Stories"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:21:11.246Z",
+      "title": "Walk-Up Experience - Starter Stories",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Walk-up Experience - Starter Stories.xlsx",
+      "sha256": "365c8db46d9e3407aea202ba6350b753c3c3e8316f1edb49f4c61983d5ee683d",
+      "downloadedAt": "2026-10-28T21:21:16.580Z",
+      "text": "markdown/walk-up-experience/walk-up-experience-starter-stories.md",
+      "textSha256": "4aa9e29f7bc98a9d00574fafadc717834ace3f676141e7d8c7baeeb944daeae9",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/workforce-optimization-process-guide": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/workforce-optimization-process-guide",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Guide"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:21:18.593Z",
+      "title": "Workforce Optimization - Process Guide",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Workforce Optimization - Process Guide.docx",
+      "sha256": "db96d29d2c7c44eec13278f7384f738606e43bfb07f819116c67ebacae478cf1",
+      "downloadedAt": "2026-10-28T21:21:27.380Z",
+      "text": "markdown/workforce-optimization/workforce-optimization-process-guide.md",
+      "textSha256": "86ebcd2c20f4b3fe2c6ca5a9ae9689e90b9bb71eda52afd3c502586b0f6c466f",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/workforce-optimization-process-workshop": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/workforce-optimization-process-workshop",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Process Workshop Presentation"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:21:29.514Z",
+      "title": "Workforce Optimization - Process Workshop",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Workforce Optimization - Process Workshop Presentation.pptx",
+      "sha256": "9bf569b00bbf688967731c2ba7f923ba9b9fe505d08e2449171919035ea8103f",
+      "downloadedAt": "2026-10-28T21:21:50.404Z",
+      "text": "markdown/workforce-optimization/workforce-optimization-process-workshop-presentation.md",
+      "textSha256": "723654ba5e17384e0e9953159190fc0a8d321e96a4bfa9f051ec963637dbdec2",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/workforce-optimization-starter-stories": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/workforce-optimization-starter-stories",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Starter Stories"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:21:53.503Z",
+      "title": "Workforce Optimization - Starter Stories",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Workforce Optimization - Starter Stories.xlsx",
+      "sha256": "c5a61d741befe2ba12d3495ab162186d191cf3a4f1c3c968f33ba4681ad2e2c3",
+      "downloadedAt": "2026-10-28T21:21:58.595Z",
+      "text": "markdown/workforce-optimization/workforce-optimization-starter-stories.md",
+      "textSha256": "e4a816361694f31a557adba8b4621b2852a4fc1f72ab81fb27b1618183b140e7",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/workforce-optimization-wfo-roles": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/workforce-optimization-wfo-roles",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Product White Paper"
+      ],
+      "status": "download_failed",
+      "attemptedAt": "2026-10-28T21:22:00.605Z",
+      "error": "locator.waitFor: Error: strict mode violation: getByRole('button', { name: 'Download', exact: true }) resolved to 2 elements:\n    1) <button disabled type=\"button\" aria-label=\"Download\" data-ariadescribedby=\"Download\" class=\"now-button-iconic -tertiary -md is-disabled\">…</button> aka locator('#download').getByRole('button', { name: 'Download' })\n    2) <button type=\"button\" aria-label=\"Download\" data-tooltip=\"Download\" class=\"now-button -primary -md\" data-ariadescribedby=\"Download\">…</button> aka locator('#item-download_button').getByRole('button', { name: 'Download' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Download', exact: true }) to be visible\u001b[22m\n"
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/zero-outages-phase-one-major-incident-management": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/zero-outages-phase-one-major-incident-management",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Deployment Guide"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:22:06.429Z",
+      "title": "Zero Outages Phase One Major Incident Management",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Zero Outages Phase One Major Incident Management.pdf",
+      "sha256": "ba5a37f6b018261b1c941f153c33f8abd37db9b29f9c76f17402f3348ea07d96",
+      "downloadedAt": "2026-10-28T21:22:13.790Z",
+      "text": "markdown/zero-outages-phase-one-major-incident-management/zero-outages-phase-one-major-incident-management.md",
+      "textSha256": "e61450c13c6731d01e496e2366bfe40728cbbc9942e1fe87092b73f0ca300043",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/zero-outages-phase-one-on-call-scheduling-best-practice-guide": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/zero-outages-phase-one-on-call-scheduling-best-practice-guide",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Deployment Guide"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:22:16.129Z",
+      "title": "Zero Outages Phase One - On Call Scheduling Best Practice Guide",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Zero Outages Phase One - On Call Scheduling Best Practice Guide.pdf",
+      "sha256": "02a8060dcfca00707d16edfb22f5ad9e5b4873b8580fa99d563d1d81d9fecf25",
+      "downloadedAt": "2026-10-28T21:22:25.458Z",
+      "text": "markdown/zero-outages-phase-one/zero-outages-phase-one-on-call-scheduling-best-practice-guide.md",
+      "textSha256": "848c785d44f6dbde0fb497495ecaf8fc44a3489e8b2c872d8ae5c0a986bf5868",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/zero-touch-it-support-aiassisted-to-autonomous": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/zero-touch-it-support-aiassisted-to-autonomous",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Deployment Guide"
+      ],
+      "status": "complete",
+      "attemptedAt": "2026-10-28T21:22:27.788Z",
+      "title": "Zero Touch IT Support - AI-Assisted to Autonomous",
+      "release": null,
+      "lastUpdated": null,
+      "originalFilename": "Zero Touch IT Support - AI-Assisted to Autonomous.pdf",
+      "sha256": "967cd9165f52e91be99e2fec106d6f39188926c2ebd06b8ae5e720a7352ada0f",
+      "downloadedAt": "2026-10-28T21:22:34.037Z",
+      "text": "markdown/zero-touch-it-support/zero-touch-it-support-ai-assisted-to-autonomous.md",
+      "textSha256": "bf5920cdfbf894d280d59f1f6758daf80bcb6b05bce5e58a8d54cf832f62c069",
+      "error": null
+    },
+    "https://mynow.servicenow.com/now/best-practices/assets/zero-touch-it-support-phase-ii-enhanced-workflows-to-agentic-ai": {
+      "url": "https://mynow.servicenow.com/now/best-practices/assets/zero-touch-it-support-phase-ii-enhanced-workflows-to-agentic-ai",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Deployment Guide"
+      ],
+      "status": "download_failed",
+      "attemptedAt": "2026-10-28T21:22:36.305Z",
+      "error": "locator.waitFor: Error: strict mode violation: getByRole('button', { name: 'Download', exact: true }) resolved to 2 elements:\n    1) <button disabled type=\"button\" aria-label=\"Download\" data-ariadescribedby=\"Download\" class=\"now-button-iconic -tertiary -md is-disabled\">…</button> aka locator('#download').getByRole('button', { name: 'Download' })\n    2) <button type=\"button\" aria-label=\"Download\" data-tooltip=\"Download\" class=\"now-button -primary -md\" data-ariadescribedby=\"Download\">…</button> aka locator('#item-download_button').getByRole('button', { name: 'Download' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Download', exact: true }) to be visible\u001b[22m\n"
+    },
+    "https://mynow.servicenow.com/now/best-practices/success-packs/digital-portfolio-management": {
+      "url": "https://mynow.servicenow.com/now/best-practices/success-packs/digital-portfolio-management",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Success Packs"
+      ],
+      "status": "download_failed",
+      "attemptedAt": "2026-10-28T21:22:41.534Z",
+      "title": "Digital portfolio management",
+      "release": null,
+      "lastUpdated": null,
+      "error": "No download received. Check the browser for sign-in, terms, or an access error; resolve manually and rerun with --resume."
+    },
+    "https://mynow.servicenow.com/now/best-practices/success-packs/enterprise-devops-foundations": {
+      "url": "https://mynow.servicenow.com/now/best-practices/success-packs/enterprise-devops-foundations",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Success Packs"
+      ],
+      "status": "download_failed",
+      "attemptedAt": "2026-10-28T21:23:52.945Z",
+      "title": "DevOps Change Velocity",
+      "release": null,
+      "lastUpdated": null,
+      "error": "No download received. Check the browser for sign-in, terms, or an access error; resolve manually and rerun with --resume."
+    },
+    "https://mynow.servicenow.com/now/best-practices/success-packs/hardware-asset-management-foundation": {
+      "url": "https://mynow.servicenow.com/now/best-practices/success-packs/hardware-asset-management-foundation",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Success Packs"
+      ],
+      "status": "download_failed",
+      "attemptedAt": "2026-10-28T21:25:02.393Z",
+      "title": "Hardware asset management foundation",
+      "release": null,
+      "lastUpdated": null,
+      "error": "No download received. Check the browser for sign-in, terms, or an access error; resolve manually and rerun with --resume."
+    },
+    "https://mynow.servicenow.com/now/best-practices/success-packs/itsm-intelligent-automation": {
+      "url": "https://mynow.servicenow.com/now/best-practices/success-packs/itsm-intelligent-automation",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Success Packs"
+      ],
+      "status": "download_failed",
+      "attemptedAt": "2026-10-28T21:26:06.895Z",
+      "title": "ITSM intelligent automation",
+      "release": null,
+      "lastUpdated": null,
+      "error": "No download received. Check the browser for sign-in, terms, or an access error; resolve manually and rerun with --resume."
+    },
+    "https://mynow.servicenow.com/now/best-practices/success-packs/itsm-modernize-it-service-management": {
+      "url": "https://mynow.servicenow.com/now/best-practices/success-packs/itsm-modernize-it-service-management",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Success Packs"
+      ],
+      "status": "download_failed",
+      "attemptedAt": "2026-10-28T21:27:18.279Z",
+      "title": "ITSM modernize IT service management",
+      "release": null,
+      "lastUpdated": null,
+      "error": "No download received. Check the browser for sign-in, terms, or an access error; resolve manually and rerun with --resume."
+    },
+    "https://mynow.servicenow.com/now/best-practices/success-packs/now-assist-for-it-service-management-itsm": {
+      "url": "https://mynow.servicenow.com/now/best-practices/success-packs/now-assist-for-it-service-management-itsm",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Success Packs"
+      ],
+      "status": "download_failed",
+      "attemptedAt": "2026-10-28T21:28:22.591Z",
+      "title": "Now assist for IT service management (ITSM)",
+      "release": null,
+      "lastUpdated": null,
+      "error": "No download received. Check the browser for sign-in, terms, or an access error; resolve manually and rerun with --resume."
+    },
+    "https://mynow.servicenow.com/now/best-practices/success-packs/operate-it-as-a-service": {
+      "url": "https://mynow.servicenow.com/now/best-practices/success-packs/operate-it-as-a-service",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Success Packs"
+      ],
+      "status": "download_failed",
+      "attemptedAt": "2026-10-28T21:29:31.863Z",
+      "title": "Operate IT as a service",
+      "release": null,
+      "lastUpdated": null,
+      "error": "No download received. Check the browser for sign-in, terms, or an access error; resolve manually and rerun with --resume."
+    },
+    "https://mynow.servicenow.com/now/best-practices/success-packs/optimize-itsm": {
+      "url": "https://mynow.servicenow.com/now/best-practices/success-packs/optimize-itsm",
+      "collections": [
+        "https://mynow.servicenow.com/now/best-practices/collections/it-service-management-best-practices"
+      ],
+      "categories": [
+        "Success Packs"
+      ],
+      "status": "download_failed",
+      "attemptedAt": "2026-10-28T21:30:36.211Z",
+      "title": "Optimize ITSM",
+      "release": null,
+      "lastUpdated": null,
+      "error": "No download received. Check the browser for sign-in, terms, or an access error; resolve manually and rerun with --resume."
+    }
+  },
+  "lastRun": {
+    "startedAt": "2026-10-28T21:10:31.215Z",
+    "discovered": 76,
+    "selected": 76,
+    "finishedAt": "2026-10-28T21:31:40.591Z",
+    "failures": 32
+  }
+}

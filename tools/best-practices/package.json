@@ -1,0 +1,20 @@
+{
+  "name": "now-best-practices-collector",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "collect": "node collect.mjs collect",
+    "extract": "node collect.mjs extract",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^5.3.0",
+    "fflate": "^0.8.2",
+    "pdfjs-dist": "^6.4.299",
+    "playwright": "^1.55.0"
+  }
+}

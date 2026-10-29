@@ -16,8 +16,10 @@ Start with the [reference index](./references/README.md) to check which document
 are actually available. Resolve resource paths relative to this skill's installed
 directory, not the user's workspace or an OpenCode configuration directory.
 
-This is initially a scaffold: no best-practice corpus or document extraction
-script is bundled. The index is setup guidance, not evidence of best practices.
+The [corpus manifest](./references/now-best-practices/index.json) records the
+available documents and failed downloads or conversions. Resolve its resource
+paths relative to the manifest's directory and prefer the `text` Markdown path
+for entries with `status: "complete"`. The index is metadata, not evidence of best practices.
 Do not claim coverage or cite a document unless it is present and you have read
 the relevant content.
 
