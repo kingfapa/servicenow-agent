@@ -1,9 +1,9 @@
-export function escapeMarkdown(value) {
+export function escapeMarkdown(value: unknown): string {
   return String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
     .replace(/([\\`*_{}[\]#|!])/g, '\\$1');
 }
 
-export function toMarkdown(text) {
+export function toMarkdown(text: string): string {
   const lines = text.split(/\r?\n/);
   const output = [];
   for (let i = 0; i < lines.length; i++) {
@@ -19,7 +19,7 @@ export function toMarkdown(text) {
       while (i < lines.length && lines[i].includes('\t')) rows.push(lines[i++].split('\t'));
       i--;
       const width = Math.max(...rows.map(row => row.length));
-      const format = row => '| ' + Array.from({ length: width }, (_, j) =>
+      const format = (row: string[]) => '| ' + Array.from({ length: width }, (_, j) =>
         escapeMarkdown(row[j] ?? '')).join(' | ') + ' |';
       // Generic column labels avoid misrepresenting the first source row as a header.
       output.push(format(Array.from({ length: width }, (_, j) => `Column ${j + 1}`)),

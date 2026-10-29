@@ -21,19 +21,21 @@ Run on a machine with a desktop browser, preferably your Windows desktop if
 that is where you use SSO. A terminal in remote VS Code runs on the remote
 machine, not automatically on Windows.
 
-Requires Node.js 22.13 or newer and npm. No Python is required. From the
+Requires Node.js 22.13 or newer and npm. The tool and tests are written in
+TypeScript and run through `tsx`; no build step or Python is required. Install
+development dependencies too (do not use `npm ci --omit=dev`). From the
 repository root:
 
 ```powershell
 # Windows PowerShell
 npm ci --prefix tools/best-practices
-node tools/best-practices/collect.mjs collect --channel msedge --output "$HOME\now-best-practices" --limit 1
+npm run collect --prefix tools/best-practices -- --channel msedge --output "$HOME\now-best-practices" --limit 1
 ```
 
 ```bash
 # Linux/macOS with a desktop session
 npm ci --prefix tools/best-practices
-node tools/best-practices/collect.mjs collect --channel chrome \
+npm run collect --prefix tools/best-practices -- --channel chrome \
   --output "$HOME/now-best-practices" --limit 1
 ```
 
@@ -138,13 +140,13 @@ After resolving extraction dependencies or replacing the extractor, rerun
 conversion without opening a browser or downloading again:
 
 ```bash
-node tools/best-practices/collect.mjs extract --output /path/to/local/corpus
+npm run extract --prefix tools/best-practices -- --output /path/to/local/corpus
 ```
 
 For the maintainer corpus retained locally in this checkout (Git-ignored):
 
 ```bash
-node tools/best-practices/collect.mjs extract --output .local/now-best-practices
+npm run extract --prefix tools/best-practices -- --output .local/now-best-practices
 ```
 
 This regenerates Markdown from checksum-verified originals and updates the index's
@@ -179,8 +181,13 @@ repository; this local copy is for offline maintenance.
 ## Validation
 
 ```bash
+npm run typecheck --prefix tools/best-practices
 npm test --prefix tools/best-practices
 ```
+
+Strict type-checking covers source and tests without generating JavaScript files.
+Relative `--output` and `--profile` paths resolve from the directory where you
+invoke npm, not the tool's package directory.
 
 Tests use generated documents and a local simulated browser UI, not credentials
 or live ServiceNow documents. Browser tests use installed Chrome by default; set

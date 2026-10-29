@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { markdownPath } from '../corpus-paths.mjs';
+import { markdownPath } from '../corpus-paths.ts';
 
 const record = {
   url: 'https://mynow.servicenow.com/now/best-practices/assets/change-management-process-guide',

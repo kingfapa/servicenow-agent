@@ -1,17 +1,20 @@
 import assert from 'node:assert/strict';
 import { after, before, test } from 'node:test';
+import type { TestContext } from 'node:test';
 import { promises as fs } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { chromium } from 'playwright';
+import type { Browser } from 'playwright';
+import type { ResourceRecord } from '../types.ts';
 import {
   BASE, DEFAULT_COLLECTION, canonicalUrl, collect, convertPending, convertRecord,
   discover, loadIndex, main, receiveDownload, reusable, safePath,
   ensureDownloadAccess, prepareProfile,
-} from '../collect.mjs';
+} from '../collect.ts';
 
-let browser;
+let browser: Browser;
 before(async () => {
   const executablePath = process.env.BEST_PRACTICES_BROWSER;
   browser = await chromium.launch({
@@ -23,14 +26,14 @@ after(async () => { await browser?.close(); });
 
 const asset = BASE + 'assets/test-guide';
 const pack = BASE + 'success-packs/test-plan';
-const digest = data => createHash('sha256').update(data).digest('hex');
-const category = (label, urls, count = urls.length) => `<now-accordion-item><template shadowrootmode="open">
+const digest = (data: string | Uint8Array) => createHash('sha256').update(data).digest('hex');
+const category = (label: string, urls: string[], count = urls.length) => `<now-accordion-item><template shadowrootmode="open">
   <button aria-controls="accordion-item" aria-expanded="false" aria-label="${count} ${label}"
     onclick="this.setAttribute('aria-expanded', 'true')">${label}</button>
   ${urls.map(url => `<a href="${url}">Asset</a>`).join('')}
   </template></now-accordion-item>`;
 
-async function fixture(t, categories = category('Process Guide', [asset]) + category('Success Packs', [pack])) {
+async function fixture(t: TestContext, categories = category('Process Guide', [asset]) + category('Success Packs', [pack])) {
   const root = await fs.mkdtemp(path.join(tmpdir(), 'now-collector-test-'));
   const context = await browser.newContext({ acceptDownloads: true });
   const page = await context.newPage();
@@ -68,11 +71,13 @@ test('collects shadow-DOM categories, downloads current assets/plans, converts a
     assert.equal(record.status, 'complete');
     assert.equal(record.release, 'Australia');
     assert.equal(record.lastUpdated, 'Jul 27, 2026');
+    assert.ok(record.text);
     assert.match(await fs.readFile(path.join(root, record.text), 'utf8'), /Source: https:/);
   }
   assert.equal(await collect(page, root, index, [DEFAULT_COLLECTION], {
     delay: 0, resume: true, downloadResource() { throw new Error('Should skip unchanged assets'); },
   }), 0);
+  assert.ok(index.lastRun);
   assert.equal(index.lastRun.discovered, 2);
   assert.ok(index.resources[asset].checkedAt);
   assert.ok(index.lastRun.finishedAt);
@@ -105,11 +110,13 @@ test('download failures and limited scope are persisted, not reported as success
 test('download timeout cleans up event listeners and exposes the failure', async t => {
   const { page, context } = await fixture(t);
   await page.setContent('<button>Download</button>');
-  const beforePage = page.listenerCount('download');
-  const beforeContext = context.listenerCount('page');
+  const pageOn = t.mock.method(page, 'on');
+  const pageOff = t.mock.method(page, 'off');
+  const contextOn = t.mock.method(context, 'on');
+  const contextOff = t.mock.method(context, 'off');
   await assert.rejects(receiveDownload(page, page.getByRole('button'), 20), /No download received/);
-  assert.equal(page.listenerCount('download'), beforePage);
-  assert.equal(context.listenerCount('page'), beforeContext);
+  assert.deepEqual(pageOff.mock.calls.map(call => call.arguments), pageOn.mock.calls.map(call => call.arguments));
+  assert.deepEqual(contextOff.mock.calls.map(call => call.arguments), contextOn.mock.calls.map(call => call.arguments));
 });
 
 test('conversion failure preserves the original and is retryable without a browser', async t => {
@@ -117,13 +124,14 @@ test('conversion failure preserves the original and is retryable without a brows
   const bytes = Buffer.from('not a supported document');
   const unsupportedDownload = {
     failure: async () => null, suggestedFilename: () => 'diagram.png',
-    saveAs: filename => fs.writeFile(filename, bytes),
+    saveAs: (filename: string) => fs.writeFile(filename, bytes),
   };
   assert.equal(await collect(page, root, index, [DEFAULT_COLLECTION], {
     delay: 0, limit: 1, downloadResource: async () => unsupportedDownload,
   }), 1);
   const record = index.resources[asset];
   assert.equal(record.status, 'extraction_failed');
+  assert.ok(record.original);
   assert.deepEqual(await fs.readFile(path.join(root, record.original)), bytes);
   assert.equal(await convertPending(root, index), 1);
   assert.equal(record.text, null);
@@ -132,12 +140,13 @@ test('conversion failure preserves the original and is retryable without a brows
 test('conversion includes provenance and resume checks original and text checksums', async t => {
   const { root } = await fixture(t);
   await fs.writeFile(path.join(root, 'original.txt'), 'Reviewed process');
-  const record = {
+  const record: ResourceRecord = {
     original: 'original.txt', url: asset, title: 'Test', release: 'Australia',
     lastUpdated: 'Jul 27, 2026', sha256: digest('Reviewed process'),
   };
   await convertRecord(root, record);
   assert.equal(record.text, 'markdown/test-guide/test-guide.md');
+  assert.ok(record.text);
   assert.match(await fs.readFile(path.join(root, record.text), 'utf8'), /^# Test\n/);
   assert.equal(await reusable(root, record, record), true);
   assert.equal(await reusable(root, { ...record, text: 'extracted.txt' }, record), false);
@@ -145,6 +154,7 @@ test('conversion includes provenance and resume checks original and text checksu
   assert.equal(await reusable(root, record, { ...record, release: null }), false);
   await fs.writeFile(path.join(root, record.text), 'tampered');
   assert.equal(await reusable(root, record, record), false);
+  assert.ok(record.original);
   await fs.writeFile(path.join(root, record.original), 'tampered');
   await assert.rejects(convertRecord(root, record), /checksum/);
 });
@@ -177,7 +187,7 @@ test('URLs, manifest versions, empty conversion and corpus paths are validated',
   }
   await assert.rejects(safePath(root, '../escape'), /escapes/);
   await assert.rejects(safePath(root, path.join(root, 'absolute.txt')), /relative/);
-  await assert.rejects(convertPending(root, { resources: {} }), /No downloaded originals/);
+  await assert.rejects(convertPending(root, { schemaVersion: 1, resources: {}, collections: {} }), /No downloaded originals/);
   await fs.writeFile(path.join(root, 'index.json'), '{"schemaVersion":999}');
   await assert.rejects(loadIndex(root), /invalid corpus index/);
   await assert.rejects(main(['collect', '--output', process.cwd()]), /outside/);

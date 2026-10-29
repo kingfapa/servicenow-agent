@@ -1,13 +1,13 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { zipSync, strToU8 } from 'fflate';
-import { extractText } from '../extract-text.mjs';
+import { extractText } from '../extract-text.ts';
 
-const zip = files => zipSync(Object.fromEntries(Object.entries(files).map(
+const zip = (files: Record<string, string | Uint8Array>) => zipSync(Object.fromEntries(Object.entries(files).map(
   ([name, content]) => [name, typeof content === 'string' ? strToU8(content) : content]
 )));
-const rels = body => `<Relationships>${body}</Relationships>`;
-const drawing = text => `<a:root xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"><a:p><a:r><a:t>${text}</a:t></a:r></a:p></a:root>`;
+const rels = (body: string) => `<Relationships>${body}</Relationships>`;
+const drawing = (text: string) => `<a:root xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"><a:p><a:r><a:t>${text}</a:t></a:r></a:p></a:root>`;
 
 test('DOCX preserves paragraph/table order, Unicode and headers', async () => {
   const document = zip({

@@ -8,23 +8,26 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createInterface } from 'node:readline/promises';
 import { stdin, stdout } from 'node:process';
 import { chromium } from 'playwright';
-import { extractMarkdown } from './extract-text.mjs';
-import { escapeMarkdown } from './markdown.mjs';
-import { markdownPath } from './corpus-paths.mjs';
+import type { Download, Locator, Page } from 'playwright';
+import type { CollectionOptions, CorpusIndex, ResourceRecord } from './types.ts';
+import { hasErrorCode, isCorpusIndex } from './types.ts';
+import { extractMarkdown } from './extract-text.ts';
+import { escapeMarkdown } from './markdown.ts';
+import { markdownPath } from './corpus-paths.ts';
 
 export const BASE = 'https://mynow.servicenow.com/now/best-practices/';
 export const DEFAULT_COLLECTION = BASE + 'collections/it-service-management-best-practices';
 const ACCORDION = 'now-accordion-item:has(button[aria-controls="accordion-item"])';
 const RESOURCE_LINK = 'a[href*="/now/best-practices/assets/"], a[href*="/now/best-practices/success-packs/"]';
 const now = () => new Date().toISOString();
-const errorMessage = error => error instanceof Error ? error.message : String(error);
-const digest = data => createHash('sha256').update(data).digest('hex');
-const inside = (root, target) => {
+const errorMessage = (error: unknown) => error instanceof Error ? error.message : String(error);
+const digest = (data: string | Uint8Array) => createHash('sha256').update(data).digest('hex');
+const inside = (root: string, target: string) => {
   const relative = path.relative(root, target);
   return !relative.startsWith('..' + path.sep) && relative !== '..' && !path.isAbsolute(relative);
 };
 
-export function canonicalUrl(value, kinds = ['assets', 'success-packs']) {
+export function canonicalUrl(value: string, kinds = ['assets', 'success-packs']): string {
   const url = new URL(value);
   if (url.origin !== 'https://mynow.servicenow.com' || url.username || url.password) {
     throw new Error('Only HTTPS MyNow URLs are supported');
@@ -36,7 +39,7 @@ export function canonicalUrl(value, kinds = ['assets', 'success-packs']) {
   return BASE + match[1] + '/' + match[2];
 }
 
-export async function safePath(root, relative) {
+export async function safePath(root: string, relative: unknown): Promise<string> {
   if (typeof relative !== 'string' || path.isAbsolute(relative)) throw new Error('Invalid corpus-relative path');
   const target = path.resolve(root, relative);
   if (!inside(root, target)) throw new Error('Corpus path escapes output directory');
@@ -47,37 +50,35 @@ export async function safePath(root, relative) {
       if (!inside(root, real)) throw new Error('Corpus symlink escapes output directory');
       break;
     } catch (error) {
-      if (error.code !== 'ENOENT') throw error;
+      if (!hasErrorCode(error, 'ENOENT')) throw error;
       ancestor = path.dirname(ancestor);
     }
   }
   return target;
 }
 
-export async function loadIndex(root) {
+export async function loadIndex(root: string): Promise<CorpusIndex> {
   let contents;
   try {
     contents = await fs.readFile(await safePath(root, 'index.json'), 'utf8');
   } catch (error) {
-    if (error.code !== 'ENOENT') throw error;
+    if (!hasErrorCode(error, 'ENOENT')) throw error;
     return { schemaVersion: 1, collections: {}, resources: {} };
   }
-  const index = JSON.parse(contents);
-  if (index.schemaVersion !== 1 || !index.collections || !index.resources ||
-      Array.isArray(index.collections) || Array.isArray(index.resources) ||
-      typeof index.collections !== 'object' || typeof index.resources !== 'object') {
+  const index: unknown = JSON.parse(contents);
+  if (!isCorpusIndex(index)) {
     throw new Error('Unsupported or invalid corpus index');
   }
   return index;
 }
 
-export async function writeIndex(root, index) {
+export async function writeIndex(root: string, index: CorpusIndex): Promise<void> {
   const temporary = await safePath(root, 'index.json.tmp');
   await fs.writeFile(temporary, JSON.stringify(index, null, 2) + '\n');
   await fs.rename(temporary, await safePath(root, 'index.json'));
 }
 
-export async function convertRecord(root, record) {
+export async function convertRecord(root: string, record: ResourceRecord): Promise<void> {
   const source = await safePath(root, record.original);
   const data = await fs.readFile(source);
   if (digest(data) !== record.sha256) throw new Error('Original checksum differs from source index');
@@ -90,7 +91,7 @@ export async function convertRecord(root, record) {
       throw new Error(`Markdown path collision: ${relative} belongs to another source or an unrecognized file`);
     }
   } catch (error) {
-    if (error.code !== 'ENOENT') throw error;
+    if (!hasErrorCode(error, 'ENOENT')) throw error;
   }
   const header = `# ${escapeMarkdown(record.title)}\n\nSource: ${canonicalUrl(record.url)}\n\n` +
     `- Release: ${escapeMarkdown(record.release ?? 'Unknown')}\n` +
@@ -102,7 +103,7 @@ export async function convertRecord(root, record) {
   Object.assign(record, { text: relative, textSha256: digest(output), status: 'complete', error: null });
 }
 
-export async function convertPending(root, index) {
+export async function convertPending(root: string, index: CorpusIndex): Promise<number> {
   const records = Object.values(index.resources).filter(record => record.original);
   if (!records.length) throw new Error('No downloaded originals in the source index');
   let failures = 0;
@@ -120,7 +121,7 @@ export async function convertPending(root, index) {
   return failures;
 }
 
-async function waitUntil(page, predicate, message, timeout = 30000) {
+async function waitUntil(page: Page, predicate: () => Promise<boolean>, message: string, timeout = 30000): Promise<void> {
   const deadline = Date.now() + timeout;
   do {
     if (await predicate()) return;
@@ -129,13 +130,13 @@ async function waitUntil(page, predicate, message, timeout = 30000) {
   throw new Error(message);
 }
 
-export async function discover(page, collection) {
+export async function discover(page: Page, collection: string) {
   await page.goto(collection, { waitUntil: 'domcontentloaded' });
   const items = page.locator(ACCORDION);
   await items.first().waitFor({ state: 'attached', timeout: 60000 });
   const count = await items.count();
-  const resources = new Map();
-  const categoryCounts = {};
+  const resources = new Map<string, string[]>();
+  const categoryCounts: Record<string, number> = {};
   for (let i = 0; i < count; i++) {
     const item = items.nth(i);
     const button = item.locator('button[aria-controls="accordion-item"]');
@@ -148,10 +149,13 @@ export async function discover(page, collection) {
     await waitUntil(page, async () => await button.getAttribute('aria-expanded') === 'true',
       `Category did not expand: ${category}`);
     const links = item.locator(RESOURCE_LINK);
-    let urls;
+    let urls = new Set<string>();
     await waitUntil(page, async () => {
       // Responsive carousels can repeat a card several times in the DOM.
-      urls = new Set((await links.evaluateAll(anchors => anchors.map(anchor => anchor.href)))
+      urls = new Set((await links.evaluateAll(anchors => anchors.map(anchor => {
+        if (!(anchor instanceof HTMLAnchorElement)) throw new Error('Resource link is not an anchor');
+        return anchor.href;
+      })))
         .map(url => canonicalUrl(url)));
       return urls.size >= expected;
     }, `${category}: did not load the advertised ${expected} distinct resources`);
@@ -163,7 +167,7 @@ export async function discover(page, collection) {
   return { resources, categoryCounts };
 }
 
-export async function ensureDownloadAccess(page, url, prompt = promptSignIn) {
+export async function ensureDownloadAccess(page: Page, url: string, prompt: () => void | Promise<void> = promptSignIn): Promise<void> {
   const name = url.includes('/success-packs/') ? 'Export Project Plan' : 'Download';
   const download = page.getByRole('button', { name, exact: true });
   const signIn = page.getByRole('button', { name: /^sign in(?: to download)?$/i }).first();
@@ -185,7 +189,7 @@ async function promptSignIn() {
   }
 }
 
-export async function metadata(page, url) {
+export async function metadata(page: Page, url: string) {
   await page.goto(url, { waitUntil: 'domcontentloaded' });
   await ensureDownloadAccess(page, url);
   const heading = page.getByRole('heading', { level: 1 }).first();
@@ -195,26 +199,35 @@ export async function metadata(page, url) {
   const buttonName = url.includes('/success-packs/') ? 'Export Project Plan' : 'Download';
   await page.getByRole('button', { name: buttonName, exact: true }).waitFor({ state: 'visible', timeout: 30000 });
   const text = await page.getByRole('main').first().evaluate(element => {
-    const textOf = node => {
-      if (node.nodeType === Node.TEXT_NODE) return node.textContent.trim();
-      return [...(node.shadowRoot ?? node).childNodes].map(textOf).filter(Boolean).join('\n');
-    };
-    return textOf(element);
+    // Keep browser-side code self-contained: transpiler helpers are not serialized by Playwright.
+    const stack: Node[] = [element];
+    const parts: string[] = [];
+    while (stack.length) {
+      const node = stack.pop();
+      if (!node) break;
+      if (node.nodeType === Node.TEXT_NODE) {
+        const content = node.textContent?.trim();
+        if (content) parts.push(content);
+      } else {
+        stack.push(...[...((node instanceof Element ? node.shadowRoot : null) ?? node).childNodes].reverse());
+      }
+    }
+    return parts.join('\n');
   });
-  const field = label => new RegExp(label + '\\s*:\\s*\\n([^\\n]+)').exec(text)?.[1]?.trim() ?? null;
+  const field = (label: string) => new RegExp(label + '\\s*:\\s*\\n([^\\n]+)').exec(text)?.[1]?.trim() ?? null;
   return { url, title, release: field('Latest release'), lastUpdated: field('Last updated') };
 }
 
-export async function receiveDownload(page, button, timeout = 60000) {
+export async function receiveDownload(page: Page, button: Locator, timeout = 60000): Promise<Download> {
   const context = page.context();
-  const popups = [];
-  let timer;
-  let onDownload;
-  const onPage = popup => {
+  const popups: Page[] = [];
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  let onDownload!: (download: Download) => void;
+  const onPage = (popup: Page) => {
     popups.push(popup);
     popup.on('download', onDownload);
   };
-  const received = new Promise(resolve => {
+  const received = new Promise<Download>(resolve => {
     onDownload = resolve;
     page.on('download', onDownload);
     context.on('page', onPage);
@@ -223,7 +236,7 @@ export async function receiveDownload(page, button, timeout = 60000) {
     await button.click();
     return await Promise.race([
       received,
-      new Promise((_, reject) => {
+      new Promise<never>((_, reject) => {
         timer = setTimeout(() => reject(new Error(
           'No download received. Check the browser for sign-in, terms, or an access error; resolve manually and rerun with --resume.'
         )), timeout);
@@ -237,25 +250,25 @@ export async function receiveDownload(page, button, timeout = 60000) {
   }
 }
 
-export async function reusable(root, old, current) {
+export async function reusable(root: string, old: ResourceRecord | undefined, current: ResourceRecord): Promise<boolean> {
   if (old?.status !== 'complete' || old.text !== markdownPath(old) || !current.lastUpdated || !current.release ||
       old.lastUpdated !== current.lastUpdated || old.release !== current.release) return false;
-  for (const [key, hash] of [['original', 'sha256'], ['text', 'textSha256']]) {
+  for (const [key, hash] of [['original', 'sha256'], ['text', 'textSha256']] as const) {
     try {
       const data = await fs.readFile(await safePath(root, old[key]));
       if (digest(data) !== old[hash]) return false;
     } catch (error) {
-      if (error.code === 'ENOENT') return false;
+      if (hasErrorCode(error, 'ENOENT')) return false;
       throw error;
     }
   }
   return true;
 }
 
-export async function collect(page, root, index, collections, {
+export async function collect(page: Page, root: string, index: CorpusIndex, collections: string[], {
   resume = false, delay = 2000, limit, downloadResource = receiveDownload,
-} = {}) {
-  const selected = new Map();
+}: CollectionOptions = {}): Promise<number> {
+  const selected = new Map<string, { collections: string[]; categories: string[] }>();
   for (const collection of collections) {
     const { resources, categoryCounts } = await discover(page, collection);
     index.collections[collection] = { discoveredAt: now(), categoryCounts, resourceUrls: [...resources.keys()].sort() };
@@ -273,11 +286,11 @@ export async function collect(page, root, index, collections, {
   let failures = 0;
   for (const url of urls.slice(0, limit)) {
     const old = index.resources[url];
-    const record = { url, ...selected.get(url), status: 'pending', attemptedAt: now() };
+    const record: ResourceRecord = { url, ...selected.get(url), status: 'pending', attemptedAt: now() };
     const priorPages = new Set(page.context().pages());
     try {
       Object.assign(record, await metadata(page, url));
-      if (resume && await reusable(root, old, record)) {
+      if (resume && old && await reusable(root, old, record)) {
         Object.assign(old, selected.get(url), { checkedAt: now() });
         console.log(`Verified existing: ${record.title}`);
         continue;
@@ -336,9 +349,9 @@ export async function collect(page, root, index, collections, {
   return failures;
 }
 
-export async function prepareProfile(candidate, repository, corpus) {
+export async function prepareProfile(candidate: string, repository: string, corpus: string): Promise<string> {
   const resolved = path.resolve(candidate);
-  const overlaps = target => [repository, corpus].some(root => inside(root, target) || inside(target, root));
+  const overlaps = (target: string) => [repository, corpus].some(root => inside(root, target) || inside(target, root));
   if (overlaps(resolved)) throw new Error('Browser profile must be separate from repository and corpus');
   await fs.mkdir(resolved, { recursive: true, mode: 0o700 });
   const real = await fs.realpath(resolved);
@@ -359,7 +372,7 @@ export async function main(args = process.argv.slice(2)) {
     },
   });
   if (values.help) {
-    console.log('node collect.mjs <collect|extract> --output <corpus-directory>\n' +
+    console.log('npm run collect -- --output <corpus-directory> (or npm run extract)\n' +
       '  --collection <MyNow collection URL> (repeatable)\n' +
       '  --channel chrome|msedge  --profile <dedicated-directory>  --resume\n' +
       '  --limit <positive integer>  --delay <seconds, minimum 1>');
@@ -375,7 +388,8 @@ export async function main(args = process.argv.slice(2)) {
   }
   if (values.channel && !['chrome', 'msedge'].includes(values.channel)) throw new Error('Unsupported browser channel');
   const repository = fileURLToPath(new URL('../../', import.meta.url));
-  const candidate = path.resolve(values.output);
+  const invocationDirectory = process.env.INIT_CWD ?? process.cwd();
+  const candidate = path.resolve(invocationDirectory, values.output);
   if (positionals[0] === 'collect' && inside(repository, candidate)) throw new Error('Keep downloaded resources outside the plugin repository');
   await fs.mkdir(candidate, { recursive: true });
   const root = await fs.realpath(candidate);
@@ -387,7 +401,7 @@ export async function main(args = process.argv.slice(2)) {
     if (positionals[0] === 'extract') return Number(await convertPending(root, index) > 0);
     const collections = [...new Set((values.collection ?? [DEFAULT_COLLECTION])
       .map(url => canonicalUrl(url, ['collections'])))];
-    const profile = await prepareProfile(values.profile ??
+    const profile = await prepareProfile(values.profile ? path.resolve(invocationDirectory, values.profile) :
       path.join(homedir(), '.now-best-practices', `browser-${values.channel ?? 'chromium'}`),
     await fs.realpath(repository), root);
     const context = await chromium.launchPersistentContext(profile, {

@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { toMarkdown } from '../markdown.mjs';
+import { toMarkdown } from '../markdown.ts';
 
 test('Markdown contains section headings, notes, escaped content and tables', () => {
   const result = toMarkdown('--- Slide 1 ---\n<unsafe>\n[Speaker notes]\nRead *this*\nRole\tOwner\nA|B\tTeam');

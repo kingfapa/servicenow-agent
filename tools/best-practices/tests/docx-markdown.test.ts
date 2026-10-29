@@ -1,12 +1,12 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { zipSync, strToU8 } from 'fflate';
-import { extractMarkdown } from '../extract-text.mjs';
+import { extractMarkdown } from '../extract-text.ts';
 
-const p = (content, properties = '') => `<w:p><w:pPr>${properties}</w:pPr>${content}</w:p>`;
-const run = text => `<w:r><w:t xml:space="preserve">${text}</w:t></w:r>`;
-const style = id => `<w:pStyle w:val="${id}"/>`;
-function document(body, extras = {}) {
+const p = (content: string, properties = '') => `<w:p><w:pPr>${properties}</w:pPr>${content}</w:p>`;
+const run = (text: string) => `<w:r><w:t xml:space="preserve">${text}</w:t></w:r>`;
+const style = (id: string) => `<w:pStyle w:val="${id}"/>`;
+function document(body: string, extras: Record<string, string> = {}) {
   const files = {
     'word/document.xml': `<w:document xmlns:w="urn:w" xmlns:r="urn:r"><w:body>${body}</w:body></w:document>`,
     ...extras,
@@ -37,7 +37,7 @@ test('DOCX removes TOC fields and layout whitespace while preserving headings an
 });
 
 test('DOCX tables retain all multi-paragraph cell content in the correct column', async () => {
-  const cell = content => `<w:tc>${content}</w:tc>`;
+  const cell = (content: string) => `<w:tc>${content}</w:tc>`;
   const data = document(`<w:tbl><w:tr><w:trPr><w:tblHeader/></w:trPr>
     ${cell(p(run('Role')))}${cell(p(run('Responsibilities')))}</w:tr>
     <w:tr>${cell(p(run('Owner')))}${cell(p(run('Maintain process')) + p(run('Report metrics')))}</w:tr></w:tbl>`);
