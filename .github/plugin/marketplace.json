@@ -10,7 +10,7 @@
   "plugins": [
     {
       "name": "servicenow-agent",
-      "description": "ServiceNow documentation, development, and troubleshooting with ITSM process advisory guidance.",
+      "description": "ServiceNow documentation, read-only SDK instance assistance, and ITSM process advisory guidance.",
       "version": "0.5.0",
       "source": "./plugin"
     }

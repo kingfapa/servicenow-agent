@@ -3,7 +3,7 @@
 ServiceNow documentation, development, troubleshooting, and ITSM advisory skills
 for **GitHub Copilot in VS Code**.
 
-This repository packages two agent skills and a bundled Markdown reference
+This repository packages three agent skills and a bundled Markdown reference
 library. It also includes optional maintainer tooling for collecting and
 converting authorized ServiceNow best-practice resources.
 
@@ -11,11 +11,14 @@ converting authorized ServiceNow best-practice resources.
 
 | Skill | Use it for |
 |---|---|
-| [now-docs](./plugin/skills/now-docs/SKILL.md) | Documentation-grounded ServiceNow questions, configuration, scripting, integrations, and troubleshooting, with release-aware source verification. Optional read-only instance queries use a separately installed and authenticated ServiceNow SDK. |
+| [now-docs](./plugin/skills/now-docs/SKILL.md) | Documentation-grounded ServiceNow questions, configuration, scripting, integrations, and troubleshooting, with release-aware source verification. |
+| [now-assist](./plugin/skills/now-assist/SKILL.md) | Read-only customer-instance information via `now-sdk`: incident and record lookups, schema inspection, and debugging by reading scripts, logs, and metadata. No execution or instance changes. |
 | [now-advisor](./plugin/skills/now-advisor/SKILL.md) | ITSM process design, ITIL-aligned recommendations, workshops, roles, KPIs, and implementation backlogs, grounded in available bundled references. |
 
 The skills complement each other: `now-advisor` covers process recommendations,
-while `now-docs` checks current product behavior and technical details.
+`now-docs` checks current product behavior and technical details, and `now-assist`
+retrieves instance-specific evidence. The `now-assist` skill is not the
+ServiceNow Now Assist product.
 They provide instructions and reference material for the assistant, not a
 standalone application or a preconfigured connection to your instance.
 
@@ -32,14 +35,15 @@ organization must allow agent plugins and this marketplace.
    **servicenow-agent** and select **Install**. Review any trust prompt before
    confirming.
 4. Run **Chat: Open Customizations** and confirm that **servicenow-agent** is
-   enabled and both skills are available.
+   enabled and all three skills are available.
 
 **Adding the marketplace does not install the plugin.** Complete the installation
 step before trying the skills.
 
-Node.js, Python, and the ServiceNow SDK are **not required for the bundled
-skills**. Live instance queries and maintainer tooling have separate setup
-requirements; see the linked skill and tooling guides.
+Node.js, Python, and the ServiceNow SDK are **not required to install the plugin
+or use its documentation and advisory guidance**. Live queries with `now-assist`
+require a separately installed and authenticated ServiceNow SDK.
+Maintainer tooling has separate setup requirements; see the linked guides.
 
 See the [installation and troubleshooting guide](./plugin/README.md) for
 details, including remote development and WSL considerations.
@@ -56,6 +60,9 @@ Open Copilot Chat and ask a relevant question. You can name a skill explicitly:
 
 > Using now-advisor, draft a Problem Management workshop agenda and identify
 > decisions stakeholders need to make. Disclose any gaps in the references.
+
+> Using now-assist, look up the state and priority of INC0012345 with now-sdk.
+> Confirm the target instance and credential alias before querying.
 
 For release-specific questions, include your ServiceNow release family and
 relevant context. Installing the plugin makes the skills available but does not
@@ -75,6 +82,11 @@ for current availability rather than assuming every topic is covered.
 - Converted Markdown does not reconstruct images, diagrams, or all source layout.
 - Live instance queries are optional, read-only, and require your approval and
   separate SDK authentication. Organizational data-handling policies still apply.
+- Customer-instance access uses `now-assist`, not a shared browser. Script
+  debugging reads and analyzes evidence; it never executes or changes instance
+  code. Shared-browser sign-in remains available for Now Support documentation.
+- Skills guide behavior, not enforce permissions. Use read-restricted accounts
+  and host tool approvals for access control.
 - Never paste credentials into chat or commit credentials, instance exports,
   personal data, or restricted support content.
 
@@ -92,6 +104,13 @@ for current availability rather than assuming every topic is covered.
 For skill improvements, edit the relevant skill under
 [`plugin/skills/`](./plugin/skills/) and check its behavior in an installed copy.
 Keep source citations, release applicability, and evidence gaps explicit.
+
+The [now-assist simulation cases](./plugin/skills/now-assist/evals/evals.json)
+cover bounded lookups, read-only debugging, and browser/skill routing. Run them
+with mocked results only, recording planned commands and responses using the
+included output contract; never connect to an instance for these evaluations.
+Compare against the listed expectations. These checks do not prove live SDK
+connectivity, permissions, or installed skill discovery.
 
 Before adding references, confirm redistribution is permitted and follow the
 [reference contribution guidance](./plugin/skills/now-advisor/references/README.md#adding-documents).

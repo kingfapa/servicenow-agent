@@ -22,8 +22,9 @@ git --version
 For remote development, make sure Git is available in the environment VS Code
 uses to retrieve plugins, which may be your remote host rather than your desktop.
 
-Node.js, Python, and the ServiceNow SDK are **not required to install or use the
-bundled skills**. The SDK is optional for live instance queries; the repository's
+Node.js, Python, and the ServiceNow SDK are **not required to install the plugin
+or use documentation and advisory guidance**. Live queries with `now-assist`
+require a separately installed and authenticated ServiceNow SDK; the repository's
 document collection tool is separate maintainer tooling.
 
 ## Install in VS Code
@@ -57,7 +58,8 @@ for Copilot. Open its details and check that these skills are available:
 
 | Skill | Purpose |
 |---|---|
-| [now-docs](./skills/now-docs/SKILL.md) | Documentation-grounded ServiceNow development, configuration, troubleshooting, and optional read-only instance queries. |
+| [now-docs](./skills/now-docs/SKILL.md) | Documentation-grounded ServiceNow development, configuration, and troubleshooting guidance. |
+| [now-assist](./skills/now-assist/SKILL.md) | Read-only instance records, schema, and script debugging through `now-sdk`, without script execution or instance changes. |
 | [now-advisor](./skills/now-advisor/SKILL.md) | ITSM process design and ITIL-aligned advice using available bundled best-practice references. |
 
 Try a relevant question in Copilot Chat, for example:
@@ -68,6 +70,21 @@ Try a relevant question in Copilot Chat, for example:
 Installation makes the skills available; it does not guarantee they are used
 for every question. The reference corpus has known coverage gaps, which the
 advisor should disclose when relevant.
+
+## Customer-instance access
+
+Use [now-assist](./skills/now-assist/SKILL.md) for incident lookups and debugging
+by reading instance scripts, logs, and metadata. It confirms the instance,
+credential alias, and query scope before reading data. Authenticate the SDK in
+your own terminal; never paste credentials into chat.
+
+Customer-instance access does not use a shared browser, including when the SDK
+is unavailable. Now Support documentation can still use the separate
+user-controlled browser sign-in workflow in now-docs. The `now-assist` skill is
+not the ServiceNow Now Assist product.
+
+Read-only instructions are not a tool-enforced permission boundary. Use an
+account restricted to necessary reads and keep host tool approvals enabled.
 
 ## Troubleshooting
 

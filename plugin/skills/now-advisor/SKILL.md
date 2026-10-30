@@ -85,5 +85,6 @@ These are source-selection suggestions, not an inventory of bundled documents.
   search services. Access and organizational data-handling policies still apply
   when a document is read into model context.
 - Summarize sources and cite them; do not reproduce large copyrighted passages.
-- Do not make instance changes as part of advisory research. Follow now-docs
-  guidance for optional, user-approved instance queries or implementation work.
+- Do not make instance changes as part of advisory research. Use
+  [now-assist](../now-assist/SKILL.md) for optional, user-approved read-only
+  instance queries, and now-docs for documentation-grounded implementation guidance.
