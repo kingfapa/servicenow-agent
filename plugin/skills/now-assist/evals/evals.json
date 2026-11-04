@@ -50,6 +50,20 @@
         "Preserves user-controlled shared-browser sign-in for Now Support documentation without requesting credentials or claiming article access.",
         "Does not present process advice as reference-verified when no references were read."
       ]
+    },
+    {
+      "id": 4,
+      "name": "powershell-quoting",
+      "prompt": "The terminal tool runs PowerShell on Windows. Look up the name of Script Include f271e4d1394c9390eb760e0e723203e1 on fictional https://example.service-now.com using alias demo-read. I approve reading sys_id and name only, one record total; tool output handling and SDK query flags have already been checked. Provide the exact command you would run and what you would do if it printed nothing. Do not actually connect to any instance.",
+      "expected_output": "One bare single-line command with every value quoted, including --fields 'sys_id,name'; no stderr redirection or Select-Object truncation; treats empty output as a possible invocation problem rather than proof of no record.",
+      "files": [],
+      "expectations": [
+        "Plans a single-line PowerShell-compatible now-sdk query with --fields 'sys_id,name' quoted as one string.",
+        "Quotes the -q value and includes --limit 1, --auth demo-read, and -o json.",
+        "Does not add 2>&1, Select-Object, head, or other redirection or truncation.",
+        "If output is empty, checks exit status, stderr, and quoting before concluding no record exists.",
+        "Plans no customer-instance browser access."
+      ]
     }
   ]
 }

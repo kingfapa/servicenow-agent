@@ -40,19 +40,28 @@ The skill does not bundle the SDK or provide an authenticated connection.
 2. Establish the table and fields from supplied context, verified documentation, or bounded metadata queries. Do not invent custom fields, choice values, or log-table relationships. For logs, agree on a relevant source and time window before reading messages.
 3. Use an exact `sys_id` filter when supplied, otherwise a narrow verified identifier or filter; specify `--fields`, a small `--limit`, `--auth`, and `-o json`. Treat user-supplied filter values as data: quote shell arguments safely and reject encoded-query operators that would unexpectedly broaden the approved scope. Do not interpolate untrusted strings into shell commands.
 4. Restrict instance operations to `query`. Do not use `exec`, deployment commands, token extraction, `--query-no-domain`, or executable `javascript:` query expressions, even as a debugging shortcut or permission workaround.
-5. Check the command result and JSON envelope's `ok` before consuming `records`. Report failures explicitly. Distinguish a failed query, no visible matching record, and an omitted or inaccessible field. Do not equate lack of visibility with nonexistence or an inaccessible field with an empty value.
+5. Run the command as shown in [Invoke commands so results come back](#invoke-commands-so-results-come-back). Check the command's exit status and JSON envelope's `ok` before consuming `records`. Report failures explicitly. Distinguish a failed query, no visible matching record, and an omitted or inaccessible field. Do not equate lack of visibility with nonexistence or an inaccessible field with an empty value.
 6. `--limit` is a page size, not a total retrieval budget. Inspect `hasMore` and `nextOffset`; retrieve another page only if necessary and within the agreed total budget, reducing the page size to the remaining budget. Stop at the budget and disclose partial results. Do not automatically exhaust a table or fetch all fields.
+
+### Invoke commands so results come back
+
+Most "no results" reports come from how the command line was written, not from the instance. Shells re-interpret arguments before `now-sdk` sees them.
+
+- Single-quote every value argument, including `--fields 'sys_id,name'`, `-q '<encoded-query>'`, and `--select '<path>'`. In PowerShell an unquoted comma is the array operator, so `--fields sys_id,name` is not passed as the single string `sys_id,name` and the query can fail or return nothing. Quoting is harmless in bash and zsh, so write commands that work in both. In `cmd.exe`, single quotes are literal; use double quotes there.
+- Keep the command bare. Do not add `2>&1`, `| Select-Object -First N`, `| head`, or similar. Redirection and truncation can turn stderr into shell error records, hide the exit status, or cut the JSON envelope before `ok` and `hasMore`. Bound output with `--fields`, `--limit`, and `--select` instead. Omit the debug flag unless diagnosing a failure the plain command did not explain; if you need it, check `now-sdk query --help` for the flag and keep its output separate from the JSON you parse.
+- On Windows, check which shell the terminal tool uses before writing commands. Use `\` line continuations only in bash/zsh; in PowerShell use a single line (or backtick continuations).
+- If a command returns nothing, an unexpected error, or a missing `ok`, first suspect quoting or invocation: capture the plain exit status and stderr, then re-run once with every value quoted. Do not report "no records" or an inaccessible instance until the envelope shows `ok: true` with empty `records`, or an explicit error status.
 
 ### Example queries
 
-Only run after scope, alias, fields, and installed flags have been checked. Replace all placeholders first.
+Only run after scope, alias, fields, and installed flags have been checked. Replace all placeholders first. Shown for bash/zsh; in PowerShell use the same arguments on one line.
 
 An incident's current status and priority:
 
 ```bash
 now-sdk query incident \
   -q 'number=INC0012345' \
-  --fields sys_id,number,state,priority \
+  --fields 'sys_id,number,state,priority' \
   --limit 1 --auth <alias> -o json
 ```
 
@@ -61,7 +70,7 @@ A Script Include for read-only debugging:
 ```bash
 now-sdk query sys_script_include \
   -q 'sys_id=<record-sys-id>' \
-  --fields sys_id,name,script,sys_scope,active,client_callable \
+  --fields 'sys_id,name,script,sys_scope,active,client_callable' \
   --limit 1 --auth <alias> -o json
 ```
 
