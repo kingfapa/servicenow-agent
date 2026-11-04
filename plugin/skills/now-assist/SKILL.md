@@ -20,7 +20,7 @@ These instructions guide agent behavior; they are not a tool-enforced permission
 ## Agree on access and scope
 
 1. Identify the question and reuse any supplied instance, credential alias, record number or `sys_id`, table, and time range. For an instance URL, treat its host and record identifiers as context to confirm, not permission to browse or query it.
-2. Before live access, confirm the intended instance and credential alias, the data and fields to inspect, and a small total record budget. Explain that returned data enters assistant tool output and may be retained in session logs; organizational access and data-handling policies still apply. Existing approval within this scope need not be requested again.
+2. Before live access, confirm the intended instance, the data and fields to inspect, and a small total record budget. Resolve the credential alias yourself as described in [Choose the credential alias](#choose-the-credential-alias) instead of asking the user for it, and ask only when that process leaves it ambiguous. Explain that returned data enters assistant tool output and may be retained in session logs; organizational access and data-handling policies still apply. Existing approval within this scope need not be requested again.
 3. Minimize sensitive data: start with identifiers and task-relevant fields. Retrieve script bodies, log messages, descriptions, or journal fields only when needed and within the agreed scope. Do not request credentials or unrelated personal data.
 4. If the target, permissions, or scope is ambiguous, clarify before querying. Do not silently switch instances, broaden filters, or increase the budget.
 
@@ -31,8 +31,21 @@ The skill does not bundle the SDK or provide an authenticated connection.
 1. Check for an existing `now-sdk` installation and its version before suggesting installation. Consult the [SDK setup guide](https://servicenow.github.io/sdk/getting-started) for current prerequisites (Node.js and npm). Verify that the installed version supports `query`; do not assume CLI features are available. The SDK must run on a machine that can reach the instance, which may be the remote host in remote VS Code.
 2. If installation or an upgrade is needed, obtain approval before doing it. Use an organization-approved, pinned `@servicenow/sdk` version, for example `npm install --global @servicenow/sdk@<approved-version>` after replacing the placeholder. Package installation is different from `now-sdk install`, which deploys an application and is outside this workflow. Do not scaffold a Fluent project, add `now.config.json`, or install another skill just to query records.
 3. Have the user run `now-sdk auth --help` and authenticate in their own terminal using their organization's approved method and the [authentication reference](https://servicenow.github.io/sdk/cli#auth), for example `now-sdk auth --add <instance-url> --alias <alias>`. If SDK OAuth opens a browser, the user handles it privately; do not open or inspect a shared browser. An existing browser login does not authenticate the SDK.
-4. Do not request, read, copy, or store passwords, MFA codes, tokens, cookies, or credential files; do not use `auth --print`. Confirm the intended alias with the user and pass `--auth <alias>` on every query instead of relying on defaults. Do not assume admin is necessary or that browser access grants Table API permissions.
+4. Do not request, read, copy, or store passwords, MFA codes, tokens, cookies, or credential files; do not use `auth --print`. Pass `--auth <alias>` on every query instead of relying on defaults. Do not assume admin is necessary or that browser access grants Table API permissions.
 5. If tools, SDK support, authentication, network access, or permissions are unavailable, state the blocker. Offer setup guidance or user-run queries with authorized, redacted results. Do not claim direct access or fall back to browsing the instance.
+
+### Choose the credential alias
+
+Asking the user for an alias they may not remember adds friction, and the SDK can list what is configured. Resolve it in this order:
+
+1. Use an alias the user supplied or one already confirmed earlier in the conversation.
+2. Otherwise run `now-sdk auth --list` (check `now-sdk auth --help` for the installed version's options). It does not print passwords or refresh tokens, so it is safe to read. Never read credential files or use `auth --print`.
+3. Match the listed entries to the instance in context: a supplied URL or instance name, an instance mentioned earlier in the conversation, or project configuration already in the workspace. Compare the host, not just the alias text.
+4. If exactly one credential is configured and it matches that instance, use it without asking. If exactly one is configured and the user named no instance, treat it as the likely target and ask for a one-line confirmation rather than an open question. If it points at a different instance than the one the user named, do not use it; explain the mismatch and offer setup guidance.
+5. If several are configured, suggest the one that clearly matches the instance and use it when exactly one matches. If none or more than one plausibly match, list the candidates (alias and instance only) and ask which to use, recommending your best guess. Do not choose based on the default marker alone.
+6. If none are configured, state that and offer authentication guidance from SDK setup.
+
+State the alias and instance you used in the response so a wrong guess is easy to spot. Prefer a development or sandbox alias over a production one when the user has not said which instance they mean; never switch aliases silently mid-task.
 
 ## Query workflow
 

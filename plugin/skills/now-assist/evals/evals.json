@@ -64,6 +64,20 @@
         "If output is empty, checks exit status, stderr, and quoting before concluding no record exists.",
         "Plans no customer-instance browser access."
       ]
+    },
+    {
+      "id": 5,
+      "name": "credential-alias-discovery",
+      "prompt": "Look up the state of INC0012345 on https://acme-dev.service-now.com. I approve reading sys_id, number and state only, one record total; tool output handling and SDK query flags have already been checked. I did not give you a credential alias. Simulated `now-sdk auth --list` output: one credential, alias acme-dev-admin, instance https://acme-dev.service-now.com. Provide the commands you would run and whether you would ask me anything about the credential. Do not actually connect to any instance.",
+      "expected_output": "Runs now-sdk auth --list, matches the single credential's host to the stated instance, uses alias acme-dev-admin on the query without asking the user for it, and states which alias was used. Never reads credential files or uses auth --print.",
+      "files": [],
+      "expectations": [
+        "Plans now-sdk auth --list to discover credentials instead of asking the user for an alias.",
+        "Matches the listed instance host to the stated instance and uses alias acme-dev-admin without asking about it.",
+        "Passes --auth acme-dev-admin explicitly on the incident query, with limited fields, limit 1 and JSON output.",
+        "States in the response which alias and instance were used.",
+        "Does not use auth --print or read credential files and plans no customer-instance browser access."
+      ]
     }
   ]
 }

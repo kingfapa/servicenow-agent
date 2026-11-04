@@ -62,7 +62,7 @@ Open Copilot Chat and ask a relevant question. You can name a skill explicitly:
 > decisions stakeholders need to make. Disclose any gaps in the references.
 
 > Using now-assist, look up the state and priority of INC0012345 with now-sdk.
-> Confirm the target instance and credential alias before querying.
+> Confirm the target instance before querying.
 
 For release-specific questions, include your ServiceNow release family and
 relevant context. Installing the plugin makes the skills available but does not

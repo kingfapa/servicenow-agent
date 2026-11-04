@@ -74,9 +74,10 @@ advisor should disclose when relevant.
 ## Customer-instance access
 
 Use [now-assist](./skills/now-assist/SKILL.md) for incident lookups and debugging
-by reading instance scripts, logs, and metadata. It confirms the instance,
-credential alias, and query scope before reading data. Authenticate the SDK in
-your own terminal; never paste credentials into chat.
+by reading instance scripts, logs, and metadata. It confirms the instance and
+query scope before reading data, and finds the matching credential alias with
+`now-sdk auth --list`, asking only when the choice is ambiguous. Authenticate
+the SDK in your own terminal; never paste credentials into chat.
 
 Customer-instance access does not use a shared browser, including when the SDK
 is unavailable. Now Support documentation can still use the separate
