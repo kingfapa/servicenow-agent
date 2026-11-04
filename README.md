@@ -12,7 +12,7 @@ converting authorized ServiceNow best-practice resources.
 | Skill | Use it for |
 |---|---|
 | [now-docs](./plugin/skills/now-docs/SKILL.md) | Documentation-grounded ServiceNow questions, configuration, scripting, integrations, and troubleshooting, with release-aware source verification. |
-| [now-assist](./plugin/skills/now-assist/SKILL.md) | Read-only customer-instance information via `now-sdk`: incident and record lookups, schema inspection, and debugging by reading scripts, logs, and metadata. No execution or instance changes. |
+| [now-assist](./plugin/skills/now-assist/SKILL.md) | Read-only customer-instance information via `now-sdk`: incident and record lookups, schema inspection, and debugging by reading scripts, logs, and metadata. Read-only by default; `now-sdk exec` runs only an approved script. |
 | [now-advisor](./plugin/skills/now-advisor/SKILL.md) | ITSM process design, ITIL-aligned recommendations, workshops, roles, KPIs, and implementation backlogs, grounded in available bundled references. |
 
 The skills complement each other: `now-advisor` covers process recommendations,
@@ -80,13 +80,15 @@ for current availability rather than assuming every topic is covered.
 - Recommendations should cite sources and disclose missing evidence.
 - Older process guidance is not proof of current release behavior.
 - Converted Markdown does not reconstruct images, diagrams, or all source layout.
-- Live instance queries are optional, read-only, and require your approval and
-  separate SDK authentication. Organizational data-handling policies still apply.
-- Customer-instance access uses `now-assist`, not a shared browser. Script
-  debugging reads and analyzes evidence; it never executes or changes instance
-  code. Shared-browser sign-in remains available for Now Support documentation.
-- Skills guide behavior, not enforce permissions. Use read-restricted accounts
-  and host tool approvals for access control.
+- Live instance access is optional and requires separate SDK authentication.
+  Queries are read-only. Running a script with `now-sdk exec` can change data,
+  so it needs your approval of the exact script each time, and state-changing
+  scripts need explicit approval per run. Organizational data-handling policies
+  still apply.
+- Customer-instance access uses `now-assist`, not a shared browser.
+  Shared-browser sign-in remains available for Now Support documentation.
+- Skills guide behavior, not enforce permissions. Use least-privilege accounts,
+  prefer non-production instances for scripts, and keep host tool approvals on.
 - Never paste credentials into chat or commit credentials, instance exports,
   personal data, or restricted support content.
 
@@ -106,7 +108,8 @@ For skill improvements, edit the relevant skill under
 Keep source citations, release applicability, and evidence gaps explicit.
 
 The [now-assist simulation cases](./plugin/skills/now-assist/evals/evals.json)
-cover bounded lookups, read-only debugging, and browser/skill routing. Run them
+cover bounded lookups, read-only debugging, approved script execution, and
+browser/skill routing. Run them
 with mocked results only, recording planned commands and responses using the
 included output contract; never connect to an instance for these evaluations.
 Compare against the listed expectations. These checks do not prove live SDK

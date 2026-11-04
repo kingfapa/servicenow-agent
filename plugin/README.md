@@ -59,7 +59,7 @@ for Copilot. Open its details and check that these skills are available:
 | Skill | Purpose |
 |---|---|
 | [now-docs](./skills/now-docs/SKILL.md) | Documentation-grounded ServiceNow development, configuration, and troubleshooting guidance. |
-| [now-assist](./skills/now-assist/SKILL.md) | Read-only instance records, schema, and script debugging through `now-sdk`, without script execution or instance changes. |
+| [now-assist](./skills/now-assist/SKILL.md) | Instance records, schema, and script debugging through `now-sdk`. Read-only by default; runs scripts with `now-sdk exec` only after you approve the exact script. |
 | [now-advisor](./skills/now-advisor/SKILL.md) | ITSM process design and ITIL-aligned advice using available bundled best-practice references. |
 
 Try a relevant question in Copilot Chat, for example:
@@ -84,8 +84,12 @@ is unavailable. Now Support documentation can still use the separate
 user-controlled browser sign-in workflow in now-docs. The `now-assist` skill is
 not the ServiceNow Now Assist product.
 
-Read-only instructions are not a tool-enforced permission boundary. Use an
-account restricted to necessary reads and keep host tool approvals enabled.
+Queries are read-only. `now-sdk exec` runs a script on the instance and can
+change data, so the skill uses it only after you approve the exact script, asks
+again for each state-changing run, records a reason and rollback context, and
+recommends a non-production instance first. These are instructions, not a
+tool-enforced permission boundary: use a least-privilege account and keep host
+tool approvals enabled.
 
 ## Troubleshooting
 
