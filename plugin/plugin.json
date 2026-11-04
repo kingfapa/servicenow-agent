@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "servicenow-agent",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "ServiceNow documentation, read-only SDK instance assistance, and ITSM process advisory guidance.",
   "keywords": ["servicenow", "agent", "skills", "itsm", "itil"]
 }
