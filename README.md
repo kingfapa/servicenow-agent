@@ -85,7 +85,8 @@ for current availability rather than assuming every topic is covered.
   so it needs your approval of the exact script each time, and state-changing
   scripts need explicit approval per run. Organizational data-handling policies
   still apply.
-- Customer-instance access uses `now-assist`, not a shared browser.
+- Customer-instance access uses `now-assist`, which prefers the SDK and uses a
+  shared browser only with explicit user approval, read-only.
   Shared-browser sign-in remains available for Now Support documentation.
 - Skills guide behavior, not enforce permissions. Use least-privilege accounts,
   prefer non-production instances for scripts, and keep host tool approvals on.

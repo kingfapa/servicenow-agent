@@ -7,7 +7,7 @@ description: Documentation-grounded ServiceNow assistance. Use for concepts, pro
 
 Provide documentation-grounded guidance for ServiceNow concepts, products, administration, configuration, development, integrations, workflows, and troubleshooting.
 
-Use [now-assist](../now-assist/SKILL.md) for customer-instance information: looking up incidents or other records, retrieving scripts and logs for debugging, or inspecting table schema. Do not open, suggest opening, or reuse a shared/integrated browser window to inspect a customer's instance, including as an SDK fallback. Instance access belongs to now-assist's read-only SDK workflow. General documentation questions and reviews of already supplied code do not require instance access.
+Use [now-assist](../now-assist/SKILL.md) for customer-instance information: looking up incidents or other records, retrieving scripts and logs for debugging, or inspecting table schema. Do not open a browser to inspect a customer's instance from this skill. Instance access belongs to now-assist, which prefers its read-only SDK workflow and uses the browser only with explicit user approval. General documentation questions and reviews of already supplied code do not require instance access.
 
 For ITSM process design, ITIL-aligned recommendations, workshops, scoping, or adoption advice, also consult the [ITSM advisor](../now-advisor/SKILL.md). It handles advisory framing and any available bundled best-practice references; this skill remains responsible for current product/API documentation and troubleshooting. Follow the advisor's reference index before assuming documents are bundled. For mixed questions, combine the guidance without repeating research or routing back and forth between skills.
 
@@ -74,7 +74,7 @@ These are routing cues, not an exhaustive list of supported topics. Do not treat
 
 ### User-controlled sign-in
 
-This browser workflow is only for Now Support documentation, not customer-instance records, scripts, logs, or schema. When an article requires login or the user chooses to search authenticated content, and the available browser integration supports interactive user sign-in:
+This browser workflow is only for Now Support documentation, not customer-instance records, scripts, logs, or schema (now-assist has its own user-approved browser workflow for those). When an article requires login or the user chooses to search authenticated content, and the available browser integration supports interactive user sign-in:
 
 1. Open Now Support in that browser, or reuse an existing shared Now Support tab. Ask the user to complete sign-in, SSO, and MFA directly in the browser, then confirm when finished. Do not inspect or capture login forms while the user is entering credentials.
 2. Never request, read, copy, or store passwords, MFA codes, session cookies, or authentication tokens. Do not extract browser sessions or transfer them to other tools.

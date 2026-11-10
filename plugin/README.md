@@ -79,8 +79,10 @@ query scope before reading data, and finds the matching credential alias with
 `now-sdk auth --list`, asking only when the choice is ambiguous. Authenticate
 the SDK in your own terminal; never paste credentials into chat.
 
-Customer-instance access does not use a shared browser, including when the SDK
-is unavailable. Now Support documentation can still use the separate
+Customer-instance access prefers the SDK. The skill can use a shared browser
+instead, but only after you explicitly approve it for a named instance and
+scope; you sign in yourself, and browsing stays read-only (no saves, UI
+actions, or background scripts). Now Support documentation uses the separate
 user-controlled browser sign-in workflow in now-docs. The `now-assist` skill is
 not the ServiceNow Now Assist product.
 

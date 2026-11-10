@@ -11,7 +11,7 @@
     {
       "name": "servicenow-agent",
       "description": "ServiceNow documentation, SDK instance assistance, and ITSM process advisory guidance.",
-      "version": "0.7.0",
+      "version": "0.8.0",
       "source": "./plugin"
     }
   ]
